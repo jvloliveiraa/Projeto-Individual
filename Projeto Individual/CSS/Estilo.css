@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    margin: 0;
+}
+
+/* Código do header */
+
+.header-index .container {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+}
+
+.header-index .container .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    width: 90%;
+}
+
+.header-index .container .navbar-imagem {
+    height: 100%;
+    background-color: transparent;
+}
+
+.header-index .container .navbar-imagem img {
+    height: 100%;
+}
+
+.navbar .navbar-button {
+    background-color: transparent;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 22px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border: 0;
+    height: 80%;
+    width: 10%;
+    cursor: pointer;
+}
+
+/* Término do header */
+
+/* Começo do index */
+
+.banner-index .container {
+    position: relative;
+    display: flex;
+    height: auto;
+    width: auto;
+}
+
+.bg_video {
+    height: 100%;
+    width: 100%;
+}
+
+.banner-imagem{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    height: auto;
+}
+
+.banner-imagem img{
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    align-self: center;
+}
+
+.banner-label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-family: 'Oswald', sans-serif;
+}
+
+.banner-label h1{
+    font-size: 50px;
+}
+
+.banner-label p{
+    font-size: 30px;
+}
+
+/* Término do index */
+
+/* Começo do footer */
+
+.footer .container{
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    background-color: black;
+}
+
+.footer-imagem{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.footer-imagem img{
+    height: 100%;
+}
+
+.footer-label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    width: 70%;
+}
