@@ -47,8 +47,8 @@ body {
     cursor: pointer;
 }
 
-.navbar-button:hover { 
-    color: red; 
+.navbar-button:hover {
+    color: red;
     transition: 0.5s;
     opacity: 0.7;
 }
@@ -69,7 +69,7 @@ body {
     width: 100%;
 }
 
-.banner-imagem{
+.banner-imagem {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -77,27 +77,27 @@ body {
     height: auto;
 }
 
-.banner-imagem img{
+.banner-imagem img {
     display: flex;
     justify-content: center;
     height: 400px;
     align-self: center;
 }
 
-.banner-label{
+.banner-label {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color:white;
+    color: white;
     font-family: 'Oswald', sans-serif;
 }
 
-.banner-label h1{
+.banner-label h1 {
     font-size: 50px;
 }
 
-.banner-label p{
+.banner-label p {
     font-size: 30px;
 }
 
@@ -105,24 +105,24 @@ body {
 
 /* Começo do footer */
 
-.footer .container{
+.footer .container {
     display: flex;
     flex-direction: row;
     height: 150px;
     background-color: black;
 }
 
-.footer-imagem{
+.footer-imagem {
     display: flex;
     justify-content: center;
     width: 30%;
 }
 
-.footer-imagem img{
+.footer-imagem img {
     height: 100%;
 }
 
-.footer-label{
+.footer-label {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,17 +145,17 @@ body {
     padding-top: 10vh;
 }
 
-@keyframes animaCadastro{
-    0%{
-     opacity: 0%;   
+@keyframes animaCard {
+    0% {
+        opacity: 0%;
     }
 
-    100%{
-        opacity: 100%;   
+    100% {
+        opacity: 100%;
     }
 }
 
-.container-cadastro .card-cadastro{
+.container-cadastro .card-cadastro {
     display: flex;
     flex-direction: column;
     background-color: transparent;
@@ -163,17 +163,17 @@ body {
     width: 70vw;
     height: 77vh;
     margin: auto;
-    animation-name: animaCadastro;
+    animation-name: animaCard;
     animation-duration: 1.3s;
     border: 2px solid gray;
-}   
+}
 
-.header-cadastro{
+.header-cadastro {
     display: flex;
     flex-direction: row;
 }
 
-.card-cadastro b{
+.card-cadastro b {
     position: absolute;
     text-align: center;
     margin-left: 62%;
@@ -183,7 +183,7 @@ body {
     cursor: pointer;
 }
 
-.card-cadastro h1{
+.card-cadastro h1 {
     display: flex;
     justify-content: center;
     margin: auto;
@@ -201,7 +201,7 @@ body {
     width: 95%;
 }
 
- .box-cadastro {
+.box-cadastro {
     margin: auto;
     height: 100%;
     width: 50%;
@@ -209,7 +209,7 @@ body {
     flex-direction: column;
 }
 
-.btn-cadastro{
+.btn-card {
     margin: auto;
     height: 10%;
     width: 20%;
@@ -222,14 +222,14 @@ body {
     font-size: 20px;
 }
 
-.label-cadastro{
+.label-cadastro-login {
     margin: auto;
-    color:white;
+    color: white;
     text-shadow: 0 0 4px #fff;
     font-size: 18px;
 }
 
-.input-cadastro{
+.input-cadastro {
     margin: auto;
     height: 10%;
     width: 90%;
@@ -244,4 +244,75 @@ body {
 .input-cadastro::-webkit-calendar-picker-indicator {
     cursor: pointer;
     filter: invert(0.8) brightness(50%) sepia(100%) saturate(10%) hue-rotate(90deg);
-  }
+}
+
+/* Início login */
+
+.container-login {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.950);
+    font-family: 'Oswald', sans-serif;
+    position: fixed;
+    z-index: 100;
+    display: none;
+    padding-top: 10vh;
+    border: 2px solid red;
+}
+
+.container-login .card-login {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border-radius: 80px;
+    width: 70vw;
+    height: 77vh;
+    margin: auto;
+    animation-name: animaCard;
+    animation-duration: 1.3s;
+    border: 2px solid gray;
+}
+
+.header-login{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 50%;
+    width: 95%;
+}
+
+.card-login b {
+    position: absolute;
+    text-align: center;
+    margin-left: 62%;
+    width: 5%;
+    font-size: 29px;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+.card-login h1 {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    color: white;
+    text-shadow: 0 0 4px #fff;
+    width: 95%;
+}
+
+.input-login {
+    margin: auto;
+    height: 10%;
+    width: 40%;
+    color: white;
+    background: transparent;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid gray;
+}

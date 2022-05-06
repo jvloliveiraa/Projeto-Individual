@@ -18,7 +18,7 @@
                 <img src="Imagens/logo-icone.png">
             </div>
             <div class="navbar">
-                <button class="navbar-button">LOGIN</button>
+                <button onclick="go_login()" class="navbar-button">LOGIN</button>
                 <button onclick="go_cadastro()" class="navbar-button">CADASTRO</button>
             </div>
         </div>
@@ -32,23 +32,39 @@
             </div>
             <form class="form-cadastro">
                 <div class="box-cadastro">
-                    <label class="label-cadastro">Nome</label>
+                    <label class="label-cadastro-login">Nome</label>
                     <input id="input_nome" class="input-cadastro" type="text" name="nome">
-                    <label class="label-cadastro">Apelido</label>
+                    <label class="label-cadastro-login">Apelido</label>
                     <input id="input_apelido" class="input-cadastro" type="text" name="sobrenome">
-                    <label class="label-cadastro">Data de Nascimento</label>
+                    <label class="label-cadastro-login">Data de Nascimento</label>
                     <input id="input_data_nascimento" class="input-cadastro" type="date" name="dataNasc">
                 </div>
                 <div class="box-cadastro">
-                    <label class="label-cadastro">Email</label>
+                    <label class="label-cadastro-login">Email</label>
                     <input id="input_email" class="input-cadastro" type="text" name="email">
-                    <label class="label-cadastro">Senha</label>
+                    <label class="label-cadastro-login">Senha</label>
                     <input id="input_senha" class="input-cadastro" type="password" name="senha">
-                    <label class="label-cadastro">Confirmar Senha</label>
+                    <label class="label-cadastro-login">Confirmar Senha</label>
                     <input id="input_confirmar_senha" class="input-cadastro" type="password">
                 </div>
             </form>
-            <button class="btn-cadastro">Realizar Cadastro</button>
+            <button class="btn-card">Realizar Cadastro</button>
+        </div>
+    </div>
+
+    <div id="div_login" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1>Login</h1>
+                <b onclick="go_indexByLogin()">x</b>
+            </div>
+            <form class="form-login">
+                <label class="label-cadastro-login">Email</label>
+                <input id="input_email" class="input-login" type="text" name="Email">
+                <label class="label-cadastro-login">Senha</label>
+                <input id="input_senha" class="input-login" type="password" name="Senha">
+            </form>
+            <button class="btn-card">Login</button>
         </div>
     </div>
 
@@ -58,7 +74,7 @@
             <div class="banner-imagem">
                 <img src="Imagens/logo.png">
                 <div class="banner-label">
-                    <h1>Junte-se a mais de 1000 fãs de Resident Evil 2</h1>
+                    <h1>Junte-se a mais de 100.000 fãs de Resident Evil 2</h1>
                     <p>Cadastre-se agora e tenha acesso a conteúdo de primeira mão!</p>
                 </div>
             </div>
