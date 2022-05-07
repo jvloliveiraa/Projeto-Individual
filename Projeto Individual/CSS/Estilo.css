@@ -6,7 +6,7 @@ body {
 
 /* Código do header */
 
-.header-index .container {
+.header-index .container, .header .container {
     display: flex;
     position: fixed;
     z-index: 1;
@@ -25,16 +25,16 @@ body {
     width: 90%;
 }
 
-.header-index .container .navbar-imagem {
+.header-index .container .navbar-imagem, .header .container .navbar-imagem {
     height: 100%;
     background-color: transparent;
 }
 
-.header-index .container .navbar-imagem img {
+.header-index .container .navbar-imagem img, .header .container .navbar-imagem img {
     height: 100%;
 }
 
-.navbar .navbar-button {
+.navbar-button {
     background-color: transparent;
     font-family: 'Oswald', sans-serif;
     color: white;
@@ -315,4 +315,89 @@ body {
     font-size: 18px;
     border-radius: 10px;
     border: 2px solid gray;
+}
+
+/* Tela Principal */
+
+/* Header */
+
+.header .container{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999px;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+    border: 2px solid red;
+}
+
+.header .container .navbar{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 80%;
+    list-style: none;
+    font-family: 'Oswald', sans-serif;
+}
+
+.header .container .navbar li{
+    margin: auto;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header .container .navbar li:hover {
+    color: red;
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+.header .container .logoff{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 10%;
+}
+
+.header .container .logoff .btn-card{
+    height: 40%;
+    width: 60%;
+}
+
+.header .container .logoff .btn-card:hover {
+    font-weight: bolder;
+    border: 1px solid white;
+}
+
+/* Sobre */
+
+.banner .container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 101px;
+    height: 1200px;
+    width: 100%;
+    border: 2px solid blue;
+}
+
+.container .sobre{
+    margin: auto;
+    display: flex;
+    height: 50%;
+    width: 100%;
+    border: 2px solid red;
+}
+
+.container .mídia{
+    margin: auto;
+    display: flex;
+    height: 50%;
+    width: 100%;
+    border: 2px solid yellow;
 }
