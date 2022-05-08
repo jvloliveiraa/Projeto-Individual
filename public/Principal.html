@@ -8,7 +8,7 @@
     <script src="JS/Funcionalidades.js"></script>
     <title>Resident Evil 2 - Home</title>
 </head>
-<body style="background-color: black">
+<body onload = "validarSessao()" style="background-color: black">
     
     <div class="header">
         <div class="container">
@@ -18,11 +18,11 @@
             <ul class="navbar">
                 <li>SOBRE</li>
                 <li>MÍDIA</li>
-                <li>QUIZ</li>
-                <li>RANKING</li>
+                <li> <a href="Quiz.html">QUIZ</a> </li>
+                <li> <a href="Ranking.html">RANKING</a> </li>
             </ul>
             <div class="logoff">
-                <button onclick="go_index()" class="btn-card">SAIR</button>
+                <button onclick="limparSessao()" class="btn-card">SAIR</button>
             </div>
         </div>
     </div>

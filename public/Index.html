@@ -33,22 +33,22 @@
             <form class="form-cadastro">
                 <div class="box-cadastro">
                     <label class="label-cadastro-login">Nome</label>
-                    <input id="input_nome" class="input-cadastro" type="text" name="nome">
+                    <input id="input_nome" class="input-cadastro" type="text">
                     <label class="label-cadastro-login">Apelido</label>
-                    <input id="input_apelido" class="input-cadastro" type="text" name="sobrenome">
+                    <input id="input_apelido" class="input-cadastro" type="text">
                     <label class="label-cadastro-login">Data de Nascimento</label>
-                    <input id="input_data_nascimento" class="input-cadastro" type="date" name="dataNasc">
+                    <input id="input_data_nascimento" class="input-cadastro" type="date">
                 </div>
                 <div class="box-cadastro">
                     <label class="label-cadastro-login">Email</label>
-                    <input id="input_email" class="input-cadastro" type="text" name="email">
+                    <input id="input_email" class="input-cadastro" type="text">
                     <label class="label-cadastro-login">Senha</label>
-                    <input id="input_senha" class="input-cadastro" type="password" name="senha">
+                    <input id="input_senha" class="input-cadastro" type="password">
                     <label class="label-cadastro-login">Confirmar Senha</label>
                     <input id="input_confirmar_senha" class="input-cadastro" type="password">
                 </div>
             </form>
-            <button class="btn-card">Realizar Cadastro</button>
+            <button onclick="cadastrar()" class="btn-card">Realizar Cadastro</button>
         </div>
     </div>
 
@@ -60,11 +60,11 @@
             </div>
             <form class="form-login">
                 <label class="label-cadastro-login">Email</label>
-                <input id="input_email" class="input-login" type="text" name="Email">
+                <input id="input_email_login" class="input-login" type="text">
                 <label class="label-cadastro-login">Senha</label>
-                <input id="input_senha" class="input-login" type="password" name="Senha">
+                <input id="input_senha_login" class="input-login" type="password">
             </form>
-            <button class="btn-card">Login</button>
+            <button onclick="entrar()" class="btn-card">Login</button>
         </div>
     </div>
 

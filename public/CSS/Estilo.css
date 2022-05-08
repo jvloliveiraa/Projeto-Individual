@@ -257,7 +257,6 @@ body {
     z-index: 100;
     display: none;
     padding-top: 10vh;
-    border: 2px solid red;
 }
 
 .container-login .card-login {
