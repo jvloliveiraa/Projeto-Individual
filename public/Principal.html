@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="JS/Funcionalidades.js"></script>
     <title>Resident Evil 2 - Home</title>
 </head>
-<body onload = "validarSessao()" style="background-color: black">
-    
+
+<body class="principal" style="background-image: url(Imagens/body2.jpg); overflow-x: hidden;">
+
     <div class="header">
         <div class="container">
             <div class="navbar-imagem">
                 <img src="Imagens/logo-icone.png">
             </div>
             <ul class="navbar">
-                <li>SOBRE</li>
-                <li>MÍDIA</li>
+                <li> <a href="#sobre" class="AncSobre">SOBRE</a> </li>
+                <li> <a href="#personagem" class="AncPersonagem">PERSONAGENS</a> </li>
+                <li> <a href="#midia" class="AncMidia">MÍDIA</a> </li>
+                <li> <a href="#musica" class="AncMusica">MÚSICAS</a> </li>
                 <li> <a href="Quiz.html">QUIZ</a> </li>
                 <li> <a href="Ranking.html">RANKING</a> </li>
             </ul>
@@ -29,10 +34,103 @@
 
     <div class="banner">
         <div class="container">
-            <div class="sobre">
-
+            <div id="sobre" class="sobre">
+                <h2>Sobre</h2>
+                <h1>O clássico de terror e sobrevivência</h1>
+                <p>O Resident Evil 2 original foi lançado em 1998 e vendeu mais de 4.960.000 cópias. <br>
+                    A ação gira em torno do policial novato Leon Kennedy e da estudante universitária Claire Redfield
+                    enquanto lutam para sobreviver a um misterioso surto viral em Raccoon City. <br>
+                    O original de 1998 foi aclamado como uma obra-prima de jogos
+                    e impulsionou Resident Evil para a cultura pop mainstream e o entretenimento que você conhece hoje.
+                </p>
             </div>
-            <div class="mídia">
+            <div id="personagem" class="personagem">
+                <h2>PERSONAGENS</h2>
+                <div class="personagens">
+                    <div class="perso">
+                        <div class="nome_personagem">
+                            <img src="Imagens/Leon.jpg">
+                        </div>
+                        <h2>LEON</h2>
+                    </div>
+                    <div class="perso">
+                        <div class="nome_personagem">
+                            <img src="Imagens/Claire.jpg">
+                        </div>
+                        <h2>CLAIRE</h2>
+                    </div>
+                    <div class="perso">
+                        <div class="nome_personagem">
+                            <img src="Imagens/Ada.jpg">
+                        </div>
+                        <h2>ADA</h2>
+                    </div>
+                    <div class="perso">
+                        <div class="nome_personagem">
+                            <img src="Imagens/Sherry.png">
+                        </div>
+                        <h2>SHERRY</h2>
+                    </div>
+                    <div class="perso">
+                        <div class="nome_personagem">
+                            <img src="Imagens/William.png">
+                        </div>
+                        <h2>WILLIAM</h2>
+                    </div>
+                    <div class="perso">
+                        <div class="nome_personagem">
+                            <img src="Imagens/Annette.jpeg">
+                        </div>
+                        <h2>ANNETTE</h2>
+                    </div>
+                </div>
+            </div>
+            <div id="midia" class="midia">
+                <h2>MÍDIA</h2>
+                <ul class="slider">
+                    <li>
+                        <input type="radio" id="slide1" name="slide" checked>
+                        <label for="slide1"></label>
+                        <img src="Imagens/Carrossel1.png" />
+                    </li>
+                    <li>
+                        <input type="radio" id="slide2" name="slide">
+                        <label for="slide2"></label>
+                        <img src="Imagens/Carrossel2.jpg" />
+                    </li>
+                    <li>
+                        <input type="radio" id="slide3" name="slide">
+                        <label for="slide3"></label>
+                        <img src="Imagens/Carrossel3.jpg" />
+                    </li>
+                    <li>
+                        <input type="radio" id="slide4" name="slide">
+                        <label for="slide4"></label>
+                        <img src="Imagens/Carrossel4.jpg" />
+                    </li>
+                    <li>
+                        <input type="radio" id="slide5" name="slide">
+                        <label for="slide5"></label>
+                        <img src="Imagens/Carrossel5.jpg" />
+                    </li>
+                    <li>
+                        <input type="radio" id="slide6" name="slide">
+                        <label for="slide6"></label>
+                        <img src="Imagens/Carrossel6.jpg" />
+                    </li>
+                    <li>
+                        <input type="radio" id="slide7" name="slide">
+                        <label for="slide7"></label>
+                        <img src="Imagens/Carrossel7.jpg" />
+                    </li>
+                    <li>
+                        <input type="radio" id="slide8" name="slide">
+                        <label for="slide8"></label>
+                        <img src="Imagens/Carrossel8.jpg" />
+                    </li>
+                </ul>
+            </div>
+            <div id="musica" class="musica">
 
             </div>
         </div>
@@ -58,4 +156,33 @@
     </div>
 
 </body>
+
 </html>
+
+<script>
+    var $doc = $('html, body');
+    $('.AncSobre').click(function () {
+        $doc.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        return false;
+    });
+    $('.AncMidia').click(function () {
+        $doc.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        return false;
+    });
+    $('.AncPersonagem').click(function () {
+        $doc.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        return false;
+    });
+    $('.AncMusica').click(function () {
+        $doc.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        return false;
+    });
+</script>

@@ -1,12 +1,32 @@
+/* Fonte Oswald */
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Códigos do body */
 
 body {
     margin: 0;
 }
 
-/* Código do header */
+body::-webkit-scrollbar {
+    width: 8px;
+}
 
-.header-index .container, .header .container {
+body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(59, 2, 2);
+    border-radius: 20px;
+}
+
+/* Término códigos do body */
+
+/* Código do header inicial */
+
+.header-index .container,
+.header .container {
     display: flex;
     position: fixed;
     z-index: 1;
@@ -25,12 +45,14 @@ body {
     width: 90%;
 }
 
-.header-index .container .navbar-imagem, .header .container .navbar-imagem {
+.header-index .container .navbar-imagem,
+.header .container .navbar-imagem {
     height: 100%;
     background-color: transparent;
 }
 
-.header-index .container .navbar-imagem img, .header .container .navbar-imagem img {
+.header-index .container .navbar-imagem img,
+.header .container .navbar-imagem img {
     height: 100%;
 }
 
@@ -53,7 +75,7 @@ body {
     opacity: 0.7;
 }
 
-/* Término do header */
+/* Término do header inicial */
 
 /* Começo do index */
 
@@ -131,6 +153,8 @@ body {
     color: white;
     width: 70%;
 }
+
+/* Término do footer */
 
 /* Início do Cadastro */
 
@@ -246,6 +270,8 @@ body {
     filter: invert(0.8) brightness(50%) sepia(100%) saturate(10%) hue-rotate(90deg);
 }
 
+/* Término do cadastro */
+
 /* Início login */
 
 .container-login {
@@ -272,7 +298,7 @@ body {
     border: 2px solid gray;
 }
 
-.header-login{
+.header-login {
     display: flex;
     flex-direction: row;
 }
@@ -316,11 +342,13 @@ body {
     border: 2px solid gray;
 }
 
+/* Término do Login */
+
 /* Tela Principal */
 
 /* Header */
 
-.header .container{
+.header .container {
     display: flex;
     position: fixed;
     top: 0;
@@ -329,10 +357,9 @@ body {
     flex-direction: row;
     height: 100px;
     width: 100%;
-    border: 2px solid red;
 }
 
-.header .container .navbar{
+.header .container .navbar {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -342,7 +369,8 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
-.header .container .navbar li{
+.header .container .navbar li,
+.header .container .navbar li a {
     margin: auto;
     font-size: 22px;
     color: white;
@@ -350,13 +378,14 @@ body {
     cursor: pointer;
 }
 
-.header .container .navbar li:hover {
+.header .container .navbar li:hover,
+.header .container .navbar li a:hover {
     color: red;
     transition: 0.5s;
     opacity: 0.7;
 }
 
-.header .container .logoff{
+.header .container .logoff {
     margin: auto;
     display: flex;
     justify-content: center;
@@ -364,7 +393,7 @@ body {
     width: 10%;
 }
 
-.header .container .logoff .btn-card{
+.header .container .logoff .btn-card {
     height: 40%;
     width: 60%;
 }
@@ -372,31 +401,190 @@ body {
 .header .container .logoff .btn-card:hover {
     font-weight: bolder;
     border: 1px solid white;
+    transition: 0.5s;
+    opacity: 0.7;
 }
+
+/* Término do header */
 
 /* Sobre */
 
-.banner .container{
+.banner .container {
     display: flex;
     flex-direction: column;
     margin-top: 101px;
-    height: 1200px;
+    height: 2400px;
     width: 100%;
-    border: 2px solid blue;
 }
 
-.container .sobre{
+.container .sobre,
+.container .personagem,
+.container .midia,
+.container .musica {
     margin: auto;
     display: flex;
+    flex-direction: column;
     height: 50%;
     width: 100%;
-    border: 2px solid red;
+    border: 1px solid red;
 }
 
-.container .mídia{
-    margin: auto;
-    display: flex;
-    height: 50%;
-    width: 100%;
-    border: 2px solid yellow;
+.container .personagem,
+.container .musica {
+    background-color: black;
 }
+
+.container .sobre {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 60%;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+
+.container .sobre h1 {
+    margin: auto;
+    color: white;
+    font-size: 60px;
+}
+
+.container .sobre h2,
+.container .personagem h2,
+.container .midia h2 {
+    margin: auto;
+    color: red;
+    font-size: 35px;
+    text-shadow: 0 0 5px rgb(255, 0, 0);
+}
+
+/* .midia h2{
+    margin: 0;
+} */
+
+.container .sobre p {
+    margin: auto;
+    color: white;
+    font-size: 20px;
+}
+
+/* Término do Sobre */
+
+/* Início dos Personagens */
+
+.personagem h2 {
+    font-family: 'Oswald', sans-serif;
+}
+
+.container .personagens {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Oswald', sans-serif;
+    height: 90%;
+    width: 100%;
+}
+
+.container .personagens .perso {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 90%;
+    width: 16.66%;
+}
+
+.perso .nome_personagem {
+    display: flex;
+    height: 90%;
+    width: 100%;
+}
+
+.personagens .perso .nome_persongem img {
+    position: static;
+}
+
+/* Término dos Personagens */
+
+/* Início da Mídia */
+
+.slider {
+    display: flex;
+    height: 70%;
+    width: 600px;
+    margin: auto;
+    position: relative;
+}
+
+.slider li {
+    list-style: none;
+    position: absolute;
+}
+
+.slider img {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    /* vertical-align: top; */
+}
+
+.slider input {
+    display: none;
+}
+
+.slider label {
+    background-color: rgb(104, 2, 2);
+    border: 1px solid rgb(0, 0, 0);
+    bottom: 10px;
+    cursor: pointer;
+    display: block;
+    height: 5px;
+    position: absolute;
+    width: 25px;
+    z-index: 10;
+}
+
+.slider li:nth-child(1) label {
+    left: 10px;
+}
+
+.slider li:nth-child(2) label {
+    left: 90px;
+}
+
+.slider li:nth-child(3) label {
+    left: 170px;
+}
+
+.slider li:nth-child(4) label {
+    left: 250px;
+}
+
+.slider li:nth-child(5) label {
+    left: 330px;
+}
+
+.slider li:nth-child(6) label {
+    left: 410px;
+}
+
+.slider li:nth-child(7) label {
+    left: 490px;
+}
+
+.slider li:nth-child(8) label {
+    left: 570px;
+}
+
+.slider img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slider li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+/* Término da mídia */

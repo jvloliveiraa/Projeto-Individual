@@ -38,7 +38,7 @@ function cadastrar() {
     var nome = input_nome.value;
     var apelido = input_apelido.value;
     var nascimento = input_data_nascimento.value;
-    var email = input_email.value;
+    var email = input_email.value.toLowerCase();
     var senha = input_senha.value;
     var confirmarSenha = input_confirmar_senha.value;
 
