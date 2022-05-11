@@ -265,6 +265,15 @@ body::-webkit-scrollbar-thumb {
     border: 2px solid gray;
 }
 
+.erro_cadastro{
+    margin: auto;
+    height: 15px;
+    font-size: 15px;
+    color: red;
+    text-shadow: 0 0 4px rgb(124, 26, 26);
+    font-weight: bolder;
+}
+
 .input-cadastro::-webkit-calendar-picker-indicator {
     cursor: pointer;
     filter: invert(0.8) brightness(50%) sepia(100%) saturate(10%) hue-rotate(90deg);
@@ -309,6 +318,18 @@ body::-webkit-scrollbar-thumb {
     margin: auto;
     height: 50%;
     width: 95%;
+}
+
+/* obse*/
+.card-login .erro_cadastro{
+    display: none;
+}
+
+.carregando{
+    display: none;
+    margin: auto;
+    font-size: 20px;
+    color: red;
 }
 
 .card-login b {
@@ -357,6 +378,7 @@ body::-webkit-scrollbar-thumb {
     flex-direction: row;
     height: 100px;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.750);
 }
 
 .header .container .navbar {
@@ -457,10 +479,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 35px;
     text-shadow: 0 0 5px rgb(255, 0, 0);
 }
-
-/* .midia h2{
-    margin: 0;
-} */
 
 .container .sobre p {
     margin: auto;

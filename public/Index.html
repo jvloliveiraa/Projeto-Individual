@@ -34,20 +34,27 @@
                 <div class="box-cadastro">
                     <label class="label-cadastro-login">Nome</label>
                     <input id="input_nome" class="input-cadastro" type="text">
+                    <div id="erro_nome" class="erro_cadastro"></div>
                     <label class="label-cadastro-login">Apelido</label>
                     <input id="input_apelido" class="input-cadastro" type="text">
+                    <div id="erro_apelido" class="erro_cadastro"></div>
                     <label class="label-cadastro-login">Data de Nascimento</label>
                     <input id="input_data_nascimento" class="input-cadastro" type="date">
+                    <div id="erro_nascimento" class="erro_cadastro"></div>
                 </div>
                 <div class="box-cadastro">
                     <label class="label-cadastro-login">Email</label>
                     <input id="input_email" class="input-cadastro" type="text">
+                    <div id="erro_email" class="erro_cadastro"></div>
                     <label class="label-cadastro-login">Senha</label>
                     <input id="input_senha" class="input-cadastro" type="password">
+                    <div id="erro_senha" class="erro_cadastro"></div>
                     <label class="label-cadastro-login">Confirmar Senha</label>
                     <input id="input_confirmar_senha" class="input-cadastro" type="password">
+                    <div id="erro_confirmar_senha" class="erro_cadastro"></div>
                 </div>
             </form>
+            <div id="erro_todos" class="erro_cadastro"></div>
             <button onclick="cadastrar()" class="btn-card">Realizar Cadastro</button>
         </div>
     </div>
@@ -64,7 +71,9 @@
                 <label class="label-cadastro-login">Senha</label>
                 <input id="input_senha_login" class="input-login" type="password">
             </form>
+            <div id="erro_todos_login" class="erro_cadastro"></div>
             <button onclick="entrar()" class="btn-card">Login</button>
+            <div id="carregando" class="carregando" style="color: red">Carregando...</div>
         </div>
     </div>
 
