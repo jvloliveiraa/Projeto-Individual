@@ -199,6 +199,7 @@ function entrar() {
 
             } else {
                 erro_todos_login.innerHTML = "Usuário ou senha incorretos";
+                erro_todos_login.style.display = 'block';
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
@@ -224,6 +225,7 @@ function limpar_login() {
     input_senha_login.value = "";
     input_email_login.style.border = '2px solid gray';
     input_senha_login.style.border = '2px solid gray';
+    erro_todos_login.style.display = 'none'
 }
 
 // sessão

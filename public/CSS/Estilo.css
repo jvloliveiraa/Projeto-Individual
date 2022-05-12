@@ -6,6 +6,7 @@
 
 body {
     margin: 0;
+    font-family: 'Oswald', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -120,6 +121,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .banner-label p {
+    display: flex;
+    text-align: center;
     font-size: 30px;
 }
 
@@ -374,7 +377,7 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999px;
+    z-index: 2;
     flex-direction: row;
     height: 100px;
     width: 100%;
@@ -448,7 +451,6 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     height: 50%;
     width: 100%;
-    border: 1px solid red;
 }
 
 .container .personagem,
@@ -473,7 +475,8 @@ body::-webkit-scrollbar-thumb {
 
 .container .sobre h2,
 .container .personagem h2,
-.container .midia h2 {
+.container .midia h2,
+.container .musica h2 {
     margin: auto;
     color: red;
     font-size: 35px;
@@ -516,6 +519,12 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
 }
 
+.perso .nome_personagem img:hover {
+    border: 1px solid red;
+    cursor: pointer;
+    z-index: 1;
+}
+
 .personagens .perso .nome_persongem img {
     position: static;
 }
@@ -527,7 +536,7 @@ body::-webkit-scrollbar-thumb {
 .slider {
     display: flex;
     height: 70%;
-    width: 600px;
+    width: 700px;
     margin: auto;
     position: relative;
 }
@@ -541,7 +550,7 @@ body::-webkit-scrollbar-thumb {
     margin: auto;
     height: 100%;
     width: 100%;
-    border: 1px solid rgb(0, 0, 0);
+    border: 2px solid rgb(61, 0, 0);
     border-radius: 20px;
     /* vertical-align: top; */
 }
@@ -606,3 +615,72 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Término da mídia */
+
+/* Começo das músicas */
+
+.musica .container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 75%;
+    width: 70%;
+    border: 1px solid rgb(78, 1, 1);
+}
+
+.icones, .tocando{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    height: 15%;
+    width: 100%;
+    background-color: rgb(37, 0, 0);
+    border: 1px solid rgb(37, 0, 0);
+}
+
+.icones span, .tocando span{
+    margin: auto;
+    color: white;
+}
+
+.tocando span:hover{
+    cursor: default;
+}
+
+.icones span:hover{
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    transition: 0.5s;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.container-playlist{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    width: 100%;
+}
+
+.container-playlist .playlist{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.playlist .som{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+}
+
+.playlist .som:hover{
+    color: red;
+    border: 1px solid rgb(255, 0, 0);
+    transition: 0.5s;
+    opacity: 0.7;
+}
