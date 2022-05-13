@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Estilo.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="JS/Sons.js"></script>
     <script src="JS/Funcionalidades.js"></script>
     <title>Resident Evil 2 - Home</title>
 </head>
@@ -131,31 +132,31 @@
                 </ul>
             </div>
             <div id="musica" class="musica">
+                <audio id="audio" src=""></audio>
                 <h2>MÚSICAS</h2>
                 <div class="container">
                     <div class="icones">
-                        <span>BACK</span>
-                        <span>RANDOM</span>
-                        <span>PLAY</span>
-                        <span>STOP</span>
-                        <span>NEXT</span>
+                        <img onclick="pausar()" src="Imagens/pause.png">
+                        <img onclick="aleatorio()" src="Imagens/aleatorio.png">
+                        <img onclick="play()" src="Imagens/play.png">
+                        <img onclick="parar()" src="Imagens/stop.png">
                     </div>
                     <div class="container-playlist">
                         <div class="playlist">
-                            <div class="som">Música 1</div>
-                            <div class="som">Música 2</div>
-                            <div class="som">Música 3</div>
-                            <div class="som">Música 4</div>
+                            <div onclick="tocar0()" id="musica0" class="som">SAUDADE</div>
+                            <div onclick="tocar1()" id="musica1" class="som">COLLAPSE</div>
+                            <div onclick="tocar2()" id="musica2" class="som">R.P.D HALL</div>
+                            <div onclick="tocar3()" id="musica3" class="som">BLACK IMPACT</div>
                         </div>
                         <div class="playlist">
-                            <div class="som">Música 5</div>
-                            <div class="som">Música 6</div>
-                            <div class="som">Música 7</div>
-                            <div class="som">Música 8</div>
+                            <div onclick="tocar4()" id="musica4" class="som">CONSEQUENCE</div>
+                            <div onclick="tocar5()" id="musica5" class="som">ADVENTURE</div>
+                            <div onclick="tocar6()" id="musica6" class="som">RELIVING</div>
+                            <div onclick="tocar7()" id="musica7" class="som">MOURNFUL</div>
                         </div>
                     </div>
                     <div class="tocando">
-                        <span>Tocando agora:</span>
+                        <span id="tocando_agora">Tocando agora:</span>
                     </div>
                 </div>
             </div>
