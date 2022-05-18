@@ -476,7 +476,8 @@ body::-webkit-scrollbar-thumb {
 .container .sobre h2,
 .container .personagem h2,
 .container .midia h2,
-.container .musica h2 {
+.container .musica h2,
+.container-quiz h2 {
     margin: auto;
     color: red;
     font-size: 35px;
@@ -699,4 +700,103 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid rgb(255, 0, 0);
     transition: 0.5s;
     opacity: 0.7;
+}
+
+/* Término das músicas */
+
+.container-quiz{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 131px;
+    height: 490px;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.900);
+    border-radius: 100px;
+    border: 2px solid gray;
+}
+
+.barra{
+    margin: auto;
+    margin-bottom: 0;
+    display: flex;
+    height: 5%;
+    width: 90%;
+    /* border: 1px solid gray; */
+}
+
+.barra h4{
+    margin: auto;
+    color: red;
+    font-weight: bolder;
+}
+
+.container-card-quiz{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    width: 90%;
+    /* border: 1px solid red; */
+}
+
+.card-quiz{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 95%;
+    width: 49%;
+    /* border-right: 1px solid gray; */
+}
+
+.card-quiz h4{
+    margin: 0;
+    color: white;
+    font-weight: 100;
+    font-size: 26px;
+}
+
+.radios{
+    margin: auto;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: row;
+    height: 10%;
+    width: 50%;
+    /* border: 1px solid red; */
+}
+
+.radios label{
+    margin-left: 10px;
+    color: white;
+}
+
+.quiz-buttons{
+    margin: auto;
+    display: flex;
+    height: 10%;
+    width: 90%;
+    /* border: 1px solid blue; */
+}
+
+.quiz-buttons .btn-card{
+    height: 80%;
+}
+
+#intro .card-quiz{
+    width: 70%;
+}
+
+#pergunta1, #pergunta2, #pergunta3, #pergunta4, #pergunta5, #pergunta6, #pergunta7, #pergunta, 
+#pergunta9, #pergunta10, #intro, #intro_button{
+    display: none;
+}
+
+#quiz_button{
+    /* display: none; */
 }

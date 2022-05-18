@@ -101,10 +101,7 @@ function aleatorio(){
     audio.play();
     limparMusica();
 
-    if(musicas[trilhaSorteada] == musicas[0].value){
-        musica0.style.color = 'red';
-    }
-    else if(musicas[trilhaSorteada] == musicas[1]){
+    if(musicas[trilhaSorteada] == musicas[1]){
         musica1.style.color = 'red';
     }
     else if(musicas[trilhaSorteada] == musicas[2]){
@@ -122,8 +119,11 @@ function aleatorio(){
     else if(musicas[trilhaSorteada] == musicas[6]){
         musica6.style.color = 'red';
     }
-    else {
+    else if(musicas[trilhaSorteada] == musicas[7]) {
         musica7.style.color = 'red';
+    }
+    else{
+        musica0.style.color = 'red';
     }
 }
 
