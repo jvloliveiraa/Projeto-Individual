@@ -423,7 +423,7 @@ body::-webkit-scrollbar-thumb {
     width: 60%;
 }
 
-.header .container .logoff .btn-card:hover {
+.btn-card:hover {
     font-weight: bolder;
     border: 1px solid white;
     transition: 0.5s;
@@ -725,7 +725,7 @@ body::-webkit-scrollbar-thumb {
     /* border: 1px solid gray; */
 }
 
-.barra h4{
+.barra h4, .quiz-buttons h4{
     margin: auto;
     color: red;
     font-weight: bolder;
@@ -750,7 +750,7 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     height: 95%;
     width: 49%;
-    /* border-right: 1px solid gray; */
+    /* border: 1px solid gray; */
 }
 
 .card-quiz h4{
@@ -779,24 +779,41 @@ body::-webkit-scrollbar-thumb {
 .quiz-buttons{
     margin: auto;
     display: flex;
-    height: 10%;
+    flex-direction: column;
+    height: 20%;
     width: 90%;
     /* border: 1px solid blue; */
 }
 
 .quiz-buttons .btn-card{
-    height: 80%;
+    height: 45%;
 }
 
 #intro .card-quiz{
     width: 70%;
 }
 
-#pergunta1, #pergunta2, #pergunta3, #pergunta4, #pergunta5, #pergunta6, #pergunta7, #pergunta, 
-#pergunta9, #pergunta10, #intro, #intro_button{
+#pergunta1, #pergunta2, #pergunta3, #pergunta4, #pergunta5, #pergunta6, #pergunta7, #pergunta8, 
+#pergunta9, #pergunta10, #quiz_button, .quiz-buttons h4, #resultado_quiz, #resultado_button{
     display: none;
 }
 
-#quiz_button{
-    /* display: none; */
+.container-card-resultado{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 50%;
+    /* border: 1px solid gray; */
+}
+
+.card-quiz h3{
+    color: white;
+    margin-bottom: 0;
+}
+
+#card_quiz_resultado h4{
+    color: red;
+    font-size: 20px;
+    text-shadow: 0 0 5px rgb(255, 0, 0);
 }

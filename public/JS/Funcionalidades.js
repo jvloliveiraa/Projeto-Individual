@@ -108,7 +108,7 @@ function cadastrar() {
     }
     else {
         erro_todos.innerHTML = '';
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuarios/cadastrar",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -120,7 +120,7 @@ function cadastrar() {
                 apelidoServer: apelido,
                 nascimentoServer: nascimento,
                 emailServer: email,
-                senhaServer: senha
+                senhaServer: senha,
             })
         }).then(function (resposta) {
 
@@ -132,7 +132,6 @@ function cadastrar() {
                 limpar_cadastro();
             } else {
                 input_email.style.border = '2px solid red';
-                // input_email.placeholder = 'Email já existe!'
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
@@ -189,6 +188,7 @@ function entrar() {
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.APELIDO_USUARIO = json.apelido;
                     sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.PONTO_USUARIO = json.qtdPontos;
 
                     setTimeout(function () {
                         carregando.style.display = 'block';
@@ -216,7 +216,7 @@ function entrar() {
     }
 }
 
-function finalizarCarregando(){
+function finalizarCarregando() {
     carregando.style.display = 'none';
 }
 
