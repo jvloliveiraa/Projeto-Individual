@@ -24,4 +24,9 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/atualizarTudo", function (req, res) {
+    usuarioController.atualizarTudo(req, res);
+});
+
+
 module.exports = router;

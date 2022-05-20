@@ -40,9 +40,29 @@ function cadastrarPontos(idUsuario, pontuacao) {
     return database.executar(instrucao);
 }
 
+function atualizarPontos(idUsuario, qtdPontos, pontuacao) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():");
+    
+    var instrucao = `
+        UPDATE pontuacao set qtdPontos = (${qtdPontos} + ${pontuacao}) WHERE fkUsuario = ${idUsuario};`;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function atualizarTudo(idUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+        SELECT * FROM usuario left join pontuacao on fkUsuario = idUsuario WHERE idUsuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    cadastrarPontos
+    cadastrarPontos,
+    atualizarPontos,
+    atualizarTudo
 };

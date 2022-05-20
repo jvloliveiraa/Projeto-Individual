@@ -100,11 +100,10 @@ function cadastrarPontos(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var idUsuario = req.body.idUsuarioServer;
     var pontuacao = req.body.pontuacaoServer;
+    var qtdPontos = req.body.qtdPontosServer;
 
-    if (pontuacao == undefined) {
-        atualizarPontos();
-    }
-    else {
+
+    if (qtdPontos == 'null') {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrarPontos(idUsuario, pontuacao)
             .then(
@@ -115,7 +114,24 @@ function cadastrarPontos(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\nErro ao cadastrar pontos ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+    else {
+        usuarioModel.atualizarPontos(idUsuario, qtdPontos, pontuacao)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nErro ao atualizar pontos ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);
@@ -124,11 +140,41 @@ function cadastrarPontos(req, res) {
     }
 }
 
+function atualizarTudo(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+
+    usuarioModel.atualizarTudo(idUsuario)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                if (resultado.length == 1) {
+                    console.log(resultado);
+                    res.json(resultado[0]);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("Email e/ou senha inválido(s)");
+                } else {
+                    res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                }
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+
+
 
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
-    cadastrarPontos
+    cadastrarPontos,
+    atualizarTudo
 }
