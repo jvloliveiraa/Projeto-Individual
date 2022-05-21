@@ -789,12 +789,25 @@ body::-webkit-scrollbar-thumb {
     height: 45%;
 }
 
+.icone-quiz{
+    position: absolute;
+    z-index: 100;
+    height: 100px;
+    margin-left: 60%;
+    margin-top: 13%;
+}
+
+.icone-quiz img{
+    height: 100%;
+}
+
 #intro .card-quiz{
     width: 70%;
 }
 
 #pergunta1, #pergunta2, #pergunta3, #pergunta4, #pergunta5, #pergunta6, #pergunta7, #pergunta8, 
-#pergunta9, #pergunta10, #quiz_button, .quiz-buttons h4, #resultado_quiz, #resultado_button{
+#pergunta9, #pergunta10, #quiz_button, .quiz-buttons h4, #resultado_quiz, #certo_quiz, 
+#errado_quiz{
     display: none;
 }
 
@@ -816,4 +829,14 @@ body::-webkit-scrollbar-thumb {
     color: red;
     font-size: 20px;
     text-shadow: 0 0 5px rgb(255, 0, 0);
+}
+
+#resultado_button{
+    display: none;
+    flex-direction: column;
+    height: 30%;
+}
+
+#resultado_button button{
+    height: 30%;
 }

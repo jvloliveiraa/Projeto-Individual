@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="CSS/Estilo.css">
     <title>Resident Evil 2 - Quiz</title>
 </head>
+
 <body style="background-image: url(Imagens/bk1.webp); background-size: cover;">
 
     <div class="header">
@@ -38,10 +40,10 @@
 
         <div id="intro" class="container-card-quiz">
             <div class="card-quiz">
-                <h4>Bem vindos ao quiz sobre o game da franquia 
-                    mais amada de zumbis que é Resident Evil 2 REMAKE, 
+                <h4>Bem vindos ao quiz sobre o game da franquia
+                    mais amada de zumbis que é Resident Evil 2 REMAKE,
                     nesse quiz terão 10 perguntas sobre o que já rolou
-                    sobre o jogo e apenas os verdadeiros fãs de verdade 
+                    sobre o jogo e apenas os verdadeiros fãs de verdade
                     são capazes de acertar todas!</h4>
             </div>
         </div>
@@ -268,7 +270,8 @@
 
         <div id="pergunta10" class="container-card-quiz">
             <div class="card-quiz">
-                <h4>Claire tem um irmão chamado Chris Redfield, ele faz parte de um grupo de forças especiais chamado:</h4>
+                <h4>Claire tem um irmão chamado Chris Redfield, ele faz parte de um grupo de forças especiais chamado:
+                </h4>
             </div>
             <div class="card-quiz">
                 <div class="radios">
@@ -303,13 +306,22 @@
 
         <div id="resultado_button" class="quiz-buttons">
             <button onclick="go_ranking()" class="btn-card">RANKING</button>
+            <button onclick="go_quiz_again()" class="btn-card">REINICIAR</button>
         </div>
 
         <div id="quiz_button" class="quiz-buttons">
             <button id="button_proxima" onclick="proxima_pergunta()" class="btn-card">PRÓXIMA</button>
             <h4 id="selecione">Por favor selecione uma alternativa!</h4>
         </div>
+
+        <div id="certo_quiz" class="icone-quiz">
+            <img src="Imagens/acerto.png">
+        </div>
+        <div id="errado_quiz" class="icone-quiz">
+            <img src="Imagens/erro.png.opdownload">
+        </div>
     </div>
 
 </body>
+
 </html>

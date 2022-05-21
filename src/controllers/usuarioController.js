@@ -141,7 +141,7 @@ function cadastrarPontos(req, res) {
 }
 
 function atualizarTudo(req, res) {
-    var idUsuario = req.body.idUsuarioServer;
+    var idUsuario = req.params.idUsuario;
 
     usuarioModel.atualizarTudo(idUsuario)
         .then(
