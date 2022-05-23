@@ -892,7 +892,9 @@ body::-webkit-scrollbar-thumb {
 .colocacao h4{
     margin: auto;
     display: flex;
+    width: 30%;
     color: white;
+    /* border: 1px solid blue; */
 }
 
 #classificacao{

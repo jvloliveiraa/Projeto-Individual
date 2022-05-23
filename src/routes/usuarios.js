@@ -24,12 +24,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
-// router.post("/atualizarTudo", function (req, res) {
-//     usuarioController.atualizarTudo(req, res);
-// });
-
 router.get("/atualizarTudo/:idUsuario", function (req, res) {
     usuarioController.atualizarTudo(req, res);
+});
+
+router.get("/recuperarID/", function (req, res) {
+    usuarioController.recuperarID(req, res);
 });
 
 module.exports = router;

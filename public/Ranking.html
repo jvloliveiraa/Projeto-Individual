@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Estilo.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="JS/Funcionalidades.js"></script>
     <script src="JS/Ranking.js"></script>
     <title>Resident Evil 2 - Ranking</title>
 </head>
-<body style="background-image: url(Imagens/bk4.jpeg); background-size: cover;">
+<body onload="recuperarID(()=> exibirRanking())" style="background-image: url(Imagens/bk4.jpeg); background-size: cover;">
     <div class="header">
         <div class="container">
             <div class="navbar-imagem">
@@ -35,53 +36,53 @@
                 <h2>RANKING</h2>
                 <div class="colocacao">
                     <h4 id="classificacao">1°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido1">APELIDO</h4>
+                    <h4 id="pontos1">PONTUAÇÃO</h4>
                 </div>
                 <div class="colocacao">
                     <h4 id="classificacao">2°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido2">APELIDO</h4>
+                    <h4 id="pontos2">PONTUAÇÃO</h4>
                 </div>
                 <div class="colocacao">
                     <h4 id="classificacao">3°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido3">APELIDO</h4>
+                    <h4 id="pontos3">PONTUAÇÃO</h4>
                 </div>
                 <div class="colocacao">
                     <h4 id="classificacao">4°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido4">APELIDO</h4>
+                    <h4 id="pontos4">PONTUAÇÃO</h4>
                 </div>
                 <div class="colocacao">
                     <h4 id="classificacao">5°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido5">APELIDO</h4>
+                    <h4 id="pontos5">PONTUAÇÃO</h4>
                 </div>
                 <div class="colocacao">
                     <h4 id="classificacao">6°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido6">APELIDO</h4>
+                    <h4 id="pontos6">PONTUAÇÃO</h4>
                 </div>
                 <div class="colocacao">
                     <h4 id="classificacao">7°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido7">APELIDO</h4>
+                    <h4 id="pontos7">PONTUAÇÃO</h4>
                 </div>
                 <div class="colocacao">
                     <h4 id="classificacao">8°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido8">APELIDO</h4>
+                    <h4 id="pontos8">PONTUAÇÃO</h4>
                 </div>
                 <div class="colocacao">
                     <h4 id="classificacao">9°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido9">APELIDO</h4>
+                    <h4 id="pontos9">PONTUAÇÃO</h4>
                 </div>
                 <div class="colocacao">
                     <h4 id="classificacao">10°</h4>
-                    <h4>APELIDO</h4>
-                    <h4>PONTUAÇÃO</h4>
+                    <h4 id="apelido10">APELIDO</h4>
+                    <h4 id="pontos10">PONTUAÇÃO</h4>
                 </div>
             </div>
         </div>
