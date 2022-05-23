@@ -477,7 +477,9 @@ body::-webkit-scrollbar-thumb {
 .container .personagem h2,
 .container .midia h2,
 .container .musica h2,
-.container-quiz h2 {
+.container-quiz h2,
+.ranking h2,
+.graficos h2 {
     margin: auto;
     color: red;
     font-size: 35px;
@@ -704,6 +706,8 @@ body::-webkit-scrollbar-thumb {
 
 /* Término das músicas */
 
+/* Começo do quiz */
+
 .container-quiz{
     display: flex;
     flex-direction: column;
@@ -839,4 +843,112 @@ body::-webkit-scrollbar-thumb {
 
 #resultado_button button{
     height: 30%;
+}
+
+/* Término do quiz */
+
+/* Começo do ranking */
+
+.container-ranking{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    margin-top: 125px;
+    /* border: 1px solid red; */
+}
+
+.container-ranking .container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 95%;
+    width: 48%;
+    background-color: rgba(0, 0, 0, 0.800);
+    border-radius: 100px;
+    border: 2px solid gray;
+    box-shadow: 0px 0px 10px gray;
+}
+
+.ranking{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 60%;
+    /* border: 2px solid rgb(78, 1, 1); */
+}
+
+.colocacao{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 8%;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid gray;
+}
+
+.colocacao h4{
+    margin: auto;
+    display: flex;
+    color: white;
+}
+
+#classificacao{
+    color: red;
+    text-shadow: 0 0 5px rgb(255, 0, 0);
+}
+
+.graficos{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+    /* border: 1px solid red; */
+}
+
+.metricas{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: 15%;
+    width: 90%;
+    /* border: 1px solid red; */
+}
+
+.nivel{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 95%;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(170, 5, 5);
+    border: 1px solid gray;
+    /* box-shadow: 0px 0px 10px gray; */
+}
+
+.nivel p{
+    margin: 0;
+    color: white;
+    font-size: 15px;
+}
+
+.nivel h4{
+    margin: 0;
+    color: white;
+}
+
+.canvas{
+    margin: auto;
+    align-items: flex-end;
+    display: flex;
+    height: 70%;
+    width: 90%;
+    /* border: 1px solid red; */
 }

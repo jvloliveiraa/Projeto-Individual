@@ -4,9 +4,140 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="JS/Ranking.js"></script>
     <title>Resident Evil 2 - Ranking</title>
 </head>
-<body onload = "validarSessao()">
-    
+<body style="background-image: url(Imagens/bk4.jpeg); background-size: cover;">
+    <div class="header">
+        <div class="container">
+            <div class="navbar-imagem">
+                <img src="Imagens/logo.png">
+            </div>
+            <ul class="navbar">
+                <li> <a href="Principal.html#sobre" class="AncSobre">SOBRE</a> </li>
+                <li> <a href="Principal.html#personagem" class="AncPersonagem">PERSONAGENS</a> </li>
+                <li> <a href="Principal.html#midia" class="AncMidia">MÍDIA</a> </li>
+                <li> <a href="Principal.html#musica" class="AncMusica">MÚSICAS</a> </li>
+                <li> <a href="Quiz.html">QUIZ</a> </li>
+                <li> <a href="Ranking.html">RANKING</a> </li>
+            </ul>
+            <div class="logoff">
+                <button onclick="limparSessao()" class="btn-card">SAIR</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-ranking">
+        <div class="container">
+            <div class="ranking">
+                <h2>RANKING</h2>
+                <div class="colocacao">
+                    <h4 id="classificacao">1°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+                <div class="colocacao">
+                    <h4 id="classificacao">2°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+                <div class="colocacao">
+                    <h4 id="classificacao">3°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+                <div class="colocacao">
+                    <h4 id="classificacao">4°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+                <div class="colocacao">
+                    <h4 id="classificacao">5°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+                <div class="colocacao">
+                    <h4 id="classificacao">6°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+                <div class="colocacao">
+                    <h4 id="classificacao">7°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+                <div class="colocacao">
+                    <h4 id="classificacao">8°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+                <div class="colocacao">
+                    <h4 id="classificacao">9°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+                <div class="colocacao">
+                    <h4 id="classificacao">10°</h4>
+                    <h4>APELIDO</h4>
+                    <h4>PONTUAÇÃO</h4>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="graficos">
+                <H2>NÍVEL DE FÃ</H2>
+                <div class="metricas">
+                    <div class="nivel">
+                        <h4>Veterano</h4>
+                        <p>Pontos >= 30</p>
+                    </div>
+                    <div class="nivel">
+                        <h4>Mediano</h4>
+                        <p>Pontos >= 10</p>
+                    </div>
+                    <div class="nivel">
+                        <h4>Casual</h4>
+                        <p>Pontos >= 0</p>
+                    </div>
+                </div>
+                <div class="canvas">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
+<script>
+    const labels = [
+      'Veterano',
+      'Mediano',
+      'Casual',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Jogadores',
+        backgroundColor: 'red',
+        borderColor: 'white',
+        data: [5, 30, 10],
+      }]
+    };
+  
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {}
+    };
+  </script>
+
+<script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
