@@ -1,5 +1,8 @@
 var armazenamentoUsuario = [];
 var armazenamentoPontos = [];
+var amador = '';
+var mediano = '';
+var veterano = '';
 
 function recuperarID(_callback) {
 
@@ -23,6 +26,73 @@ function recuperarID(_callback) {
             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
 
+}
+
+function obterAmador(_callback) {
+
+    fetch(`/usuarios/amador/`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                console.log(`1`);
+                amador = resposta[0].contagem;
+                _callback();
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+            _callback();
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+
+}
+
+function obterMediano(_callback) {
+
+    fetch(`/usuarios/mediano/`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                console.log(`2`);
+                mediano = resposta[0].contagem;
+                _callback();
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+            _callback();
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+
+}
+
+function obterVeterano(_callback) {
+
+    fetch(`/usuarios/veterano/`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                console.log(`3`);
+                veterano = resposta[0].contagem;
+                _callback();
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+            _callback();
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+
+}
+
+function atualizarGrafico(){
+    myChart.update();
 }
 
 function exibirRanking(){

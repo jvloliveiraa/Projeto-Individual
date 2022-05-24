@@ -32,4 +32,16 @@ router.get("/recuperarID/", function (req, res) {
     usuarioController.recuperarID(req, res);
 });
 
+router.get("/amador/", function (req, res) {
+    usuarioController.obterAmador(req, res);
+});
+
+router.get("/mediano/", function (req, res) {
+    usuarioController.obterMediano(req, res);
+});
+
+router.get("/veterano/", function (req, res) {
+    usuarioController.obterVeterano(req, res);
+});
+
 module.exports = router;

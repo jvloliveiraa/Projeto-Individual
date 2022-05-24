@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,10 @@
     <script src="JS/Ranking.js"></script>
     <title>Resident Evil 2 - Ranking</title>
 </head>
-<body onload="recuperarID(()=> exibirRanking())" style="background-image: url(Imagens/bk4.jpeg); background-size: cover;">
+
+<body onload="recuperarID(()=> exibirRanking()), obterAmador(()=>obterMediano(()=>obterVeterano(()=>inserirGrafico()))),
+    setTimeout(atualizarGrafico, 100)"
+    style="background-image: url(Imagens/bk4.jpeg); background-size: cover;">
     <div class="header">
         <div class="container">
             <div class="navbar-imagem">
@@ -110,35 +114,43 @@
         </div>
     </div>
 </body>
+
 </html>
 
 <script>
     const labels = [
-      'Veterano',
-      'Mediano',
-      'Casual',
+        'Veterano',
+        'Mediano',
+        'Casual',
     ];
-  
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'Jogadores',
-        backgroundColor: 'red',
-        borderColor: 'white',
-        data: [5, 30, 10],
-      }]
+
+    var dados = {
+        labels: labels,
+        datasets: [{
+            label: 'Jogadores',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'white',
+            data: [],
+        }]
     };
-  
+
     const config = {
-      type: 'bar',
-      data: data,
-      options: {}
+        type: 'bar',
+        data: dados,
+        options: {}
     };
-  </script>
+
+    function inserirGrafico() {
+        dados.datasets[0].data.push(veterano);
+        dados.datasets[0].data.push(mediano);
+        dados.datasets[0].data.push(amador);
+        console.log(`4`);
+    }
+</script>
 
 <script>
     const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
+        document.getElementById('myChart'),
+        config
     );
-  </script>
+</script>

@@ -61,7 +61,35 @@ function atualizarTudo(idUsuario) {
 function recuperarID() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
     var instrucao = `
-    select apelido, qtdPontos from usuario join pontuacao on fkUsuario = idUsuario order by qtdPontos desc limit 10;
+        select apelido, qtdPontos from usuario join pontuacao on fkUsuario = idUsuario 
+        order by qtdPontos desc limit 10;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function obterAmador() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+        select count(*) as contagem from pontuacao where qtdPontos <= 9;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function obterMediano() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+        select count(*) as contagem from pontuacao where qtdPontos >= 10 and qtdPontos < 30;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function obterVeterano() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+        select count(*) as contagem from pontuacao where qtdPontos >= 30;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -74,5 +102,8 @@ module.exports = {
     cadastrarPontos,
     atualizarPontos,
     recuperarID,
+    obterAmador,
+    obterMediano,
+    obterVeterano,
     atualizarTudo
 };

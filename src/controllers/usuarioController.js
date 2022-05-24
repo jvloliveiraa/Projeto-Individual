@@ -184,7 +184,56 @@ function recuperarID(req, res) {
     });
 }
 
+function obterAmador(req, res) {
 
+    console.log(`Recuperando as ultimas medidas`);
+
+    usuarioModel.obterAmador().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function obterMediano(req, res) {
+
+    console.log(`Recuperando as ultimas medidas`);
+
+    usuarioModel.obterMediano().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function obterVeterano(req, res) {
+
+    console.log(`Recuperando as ultimas medidas`);
+
+    usuarioModel.obterVeterano().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 
 module.exports = {
     entrar,
@@ -193,5 +242,8 @@ module.exports = {
     testar,
     cadastrarPontos,
     recuperarID,
+    obterAmador,
+    obterMediano,
+    obterVeterano,
     atualizarTudo
 }
