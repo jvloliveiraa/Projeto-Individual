@@ -8,6 +8,22 @@ function go_login() {
 }
 
 /* Header principal */
+var contador_perfil = 0;
+
+function open_perfil(){
+    if(contador_perfil % 2 == 0){
+        perfil_menu.style.display = 'flex';
+        contador_perfil++;
+    }
+    else{
+        perfil_menu.style.display = 'none';
+        contador_perfil++;
+    }
+}
+
+function go_home(){
+    window.location.href = "Principal.html"
+}
 
 function go_index() {
     window.location.href = "Index.html";
@@ -233,9 +249,11 @@ function validarSessao() {
 
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
+    var apelido = sessionStorage.APELIDO_USUARIO;
 
-    if (email != null && nome != null) {
-        window.alert(`Seja bem-vindo, ${nome}!`);
+    if (email != null && nome != null && apelido != null) {
+        // window.alert(`Seja bem-vindo, ${nome}!`);
+        perfil_usuario.innerHTML = `Olá, ${apelido}`;
     } else {
         window.location = "Index.html";
     }

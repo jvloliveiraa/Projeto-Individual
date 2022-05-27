@@ -12,13 +12,13 @@
     <title>Resident Evil 2 - Ranking</title>
 </head>
 
-<body onload="recuperarID(()=> exibirRanking()), obterAmador(()=>obterMediano(()=>obterVeterano(()=>inserirGrafico()))),
-    setTimeout(atualizarGrafico, 100)"
+<body onload="validarSessao(), recuperarID(()=> exibirRanking()), obterAmador(()=>obterMediano(()=>obterVeterano(()=>inserirGrafico()))),
+    setTimeout(atualizarGrafico, 600)"
     style="background-image: url(Imagens/bk4.jpeg); background-size: cover;">
     <div class="header">
         <div class="container">
             <div class="navbar-imagem">
-                <img src="Imagens/logo.png">
+                <img onclick="go_home()" src="Imagens/logo.png">
             </div>
             <ul class="navbar">
                 <li> <a href="Principal.html#sobre" class="AncSobre">SOBRE</a> </li>
@@ -28,10 +28,17 @@
                 <li> <a href="Quiz.html">QUIZ</a> </li>
                 <li> <a href="Ranking.html">RANKING</a> </li>
             </ul>
-            <div class="logoff">
-                <button onclick="limparSessao()" class="btn-card">SAIR</button>
+            <div class="perfil">
+                <img onclick="open_perfil()" src="Imagens/perfil.png">
+                <!-- <button onclick="limparSessao()" class="btn-card">SAIR</button> -->
             </div>
         </div>
+    </div>
+
+    <div id="perfil_menu" class="perfil-menu">
+        <h4 id="perfil_usuario">Olá, Usuário</h4>
+        <h4>Alterar Senha</h4>
+        <h4 onclick="limparSessao()">Sair</h4>
     </div>
 
     <div class="container-ranking">

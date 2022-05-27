@@ -11,12 +11,12 @@
     <title>Resident Evil 2 - Quiz</title>
 </head>
 
-<body style="background-image: url(Imagens/bk1.webp); background-size: cover;">
+<body onload="validarSessao()" style="background-image: url(Imagens/bk1.webp); background-size: cover;">
 
     <div class="header">
         <div class="container">
             <div class="navbar-imagem">
-                <img src="Imagens/logo.png">
+                <img onclick="go_home()" src="Imagens/logo.png">
             </div>
             <ul class="navbar">
                 <li> <a href="Principal.html#sobre" class="AncSobre">SOBRE</a> </li>
@@ -26,10 +26,17 @@
                 <li> <a href="Quiz.html">QUIZ</a> </li>
                 <li> <a href="Ranking.html">RANKING</a> </li>
             </ul>
-            <div class="logoff">
-                <button onclick="limparSessao()" class="btn-card">SAIR</button>
+            <div class="perfil">
+                <img onclick="open_perfil()" src="Imagens/perfil.png">
+                <!-- <button onclick="limparSessao()" class="btn-card">SAIR</button> -->
             </div>
         </div>
+    </div>
+
+    <div id="perfil_menu" class="perfil-menu">
+        <h4 id="perfil_usuario">Olá, Usuário</h4>
+        <h4>Alterar Senha</h4>
+        <h4 onclick="limparSessao()">Sair</h4>
     </div>
 
     <div class="container-quiz">

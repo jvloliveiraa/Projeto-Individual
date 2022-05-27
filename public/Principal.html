@@ -17,7 +17,7 @@
     <div class="header">
         <div class="container">
             <div class="navbar-imagem">
-                <img src="Imagens/logo.png">
+                <img onclick="go_home()" src="Imagens/logo.png">
             </div>
             <ul class="navbar">
                 <li> <a href="#sobre" class="AncSobre">SOBRE</a> </li>
@@ -27,9 +27,35 @@
                 <li> <a href="Quiz.html">QUIZ</a> </li>
                 <li> <a href="Ranking.html">RANKING</a> </li>
             </ul>
-            <div class="logoff">
-                <button onclick="limparSessao()" class="btn-card">SAIR</button>
+            <!-- <div class="logoff"> -->
+            <div class="perfil">
+                <img onclick="open_perfil()" src="Imagens/perfil.png">
+                <!-- <button onclick="limparSessao()" class="btn-card">SAIR</button> -->
             </div>
+        </div>
+    </div>
+
+    <div id="perfil_menu" class="perfil-menu">
+        <h4 id="perfil_usuario">Olá, Usuário</h4>
+        <h4 id="alterar_senha">Alterar Senha</h4>
+        <h4 onclick="limparSessao()">Sair</h4>
+    </div>
+
+    <div style="display: block" id="div_login" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1>Login</h1>
+                <b onclick="go_indexByLogin()">x</b>
+            </div>
+            <form class="form-login">
+                <label class="label-cadastro-login">Email</label>
+                <input id="input_email_login" class="input-login" type="text">
+                <label class="label-cadastro-login">Senha</label>
+                <input id="input_senha_login" class="input-login" type="password">
+            </form>
+            <div id="erro_todos_login" class="erro_cadastro"></div>
+            <button onclick="entrar()" class="btn-card">Login</button>
+            <div id="carregando" class="carregando" style="color: red">Carregando...</div>
         </div>
     </div>
 
