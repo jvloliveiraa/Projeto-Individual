@@ -37,25 +37,30 @@
 
     <div id="perfil_menu" class="perfil-menu">
         <h4 id="perfil_usuario">Olá, Usuário</h4>
-        <h4 id="alterar_senha">Alterar Senha</h4>
+        <h4 onclick="open_alterar_senha()">Alterar Senha</h4>
         <h4 onclick="limparSessao()">Sair</h4>
     </div>
 
-    <div style="display: block" id="div_login" class="container-login">
+    <div id="div_alterar_senha" class="container-login">
         <div class="card-login">
             <div class="header-login">
-                <h1>Login</h1>
-                <b onclick="go_indexByLogin()">x</b>
+                <h1>Alterar Senha</h1>
+                <b onclick="close_alterar_senha()">x</b>
             </div>
             <form class="form-login">
-                <label class="label-cadastro-login">Email</label>
-                <input id="input_email_login" class="input-login" type="text">
-                <label class="label-cadastro-login">Senha</label>
-                <input id="input_senha_login" class="input-login" type="password">
+                <label class="label-cadastro-login">Senha Atual</label>
+                <input id="input_senha_atual" class="input-login" type="password">
+                <div id="erro_senha_atual" class="erro_cadastro">Senha atual incorreta</div>
+                <label class="label-cadastro-login">Nova Senha</label>
+                <input id="input_nova_senha" class="input-login" type="password">
+                <div id="erro_nova_senha" class="erro_cadastro">A senha deve conter no mínimo 5 caracteres</div>
+                <label class="label-cadastro-login">Confirmar Senha</label>
+                <input id="input_confirmar_nova_senha" class="input-login" type="password">
+                <div id="erro_confirmar_senha_atual" class="erro_cadastro">As senhas devem ser iguais e conter no mínimo 5 caracteres</div>
             </form>
-            <div id="erro_todos_login" class="erro_cadastro"></div>
-            <button onclick="entrar()" class="btn-card">Login</button>
-            <div id="carregando" class="carregando" style="color: red">Carregando...</div>
+            <div id="erro_todos_alterar_senha" class="erro_cadastro">Não foi possível alterar senha!</div>
+            <button onclick="alterar_senha()" class="btn-card">Alterar</button>
+            <div id="alterar_load" class="carregando" style="color: red">Alterando...</div>
         </div>
     </div>
 

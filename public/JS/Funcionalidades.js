@@ -21,6 +21,24 @@ function open_perfil(){
     }
 }
 
+function open_alterar_senha(){
+    div_alterar_senha.style.display = 'block';
+}
+
+function close_alterar_senha(){
+    div_alterar_senha.style.display = 'none';
+    input_senha_atual.value = '';
+    input_nova_senha.value = '';
+    input_confirmar_nova_senha.value = '';
+    input_senha_atual.style.border = '2px solid gray';
+    input_nova_senha.style.border = '2px solid gray';
+    input_confirmar_nova_senha.style.border = '2px solid gray';
+    erro_todos_alterar_senha.style.display = 'none';
+    erro_confirmar_senha_atual.style.display = 'none';
+    erro_nova_senha.style.display = 'none';
+    erro_senha_atual.style.display = 'none';
+}
+
 function go_home(){
     window.location.href = "Principal.html"
 }
@@ -162,6 +180,90 @@ function go_indexByLogin() {
     limpar_login();
 }
 
+function alterar_senha(){
+    
+    var senha_atual = input_senha_atual.value;
+    var nova_senha = input_nova_senha.value;
+    var confirmar_senha = input_confirmar_nova_senha.value;
+
+    if (senha_atual != sessionStorage.SENHA_USUARIO) {
+        input_senha_atual.style.border = '2px solid red';
+        erro_senha_atual.style.display = 'block'
+    }
+    else{
+        input_senha_atual.style.border = '2px solid green';
+        erro_senha_atual.style.display = 'none'
+    }
+
+    if(nova_senha == "" || nova_senha.length < 5){
+        input_nova_senha.style.border = '2px solid red';
+        erro_nova_senha.style.display = 'block';
+        erro_todos_alterar_senha.style.display = 'block'
+    }
+    else{
+        input_nova_senha.style.border = '2px solid green';
+        erro_nova_senha.style.display = 'none';
+    }
+
+    if(confirmar_senha != nova_senha){
+        input_confirmar_nova_senha.style.border = '2px solid red';
+        erro_confirmar_senha_atual.style.display = 'block';
+    }
+    else{
+        input_confirmar_nova_senha.style.border = '2px solid green';
+        erro_confirmar_senha_atual.style.display = 'none';
+    }
+
+    if(input_senha_atual.style.border == '2px solid red' || input_nova_senha.style.border == '2px solid red'
+        || input_confirmar_nova_senha.style.border == '2px solid red'){
+            erro_todos_alterar_senha.style.display = 'block';
+    }
+     else {
+        erro_todos_alterar_senha.style.display = 'none';
+
+        fetch("/usuarios/alterar_senha", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                senha_atualServer: senha_atual,
+                nova_senhaServer: nova_senha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    setTimeout(function () {
+                        alterar_load.style.display = 'block';
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+                erro_todos_alterar_senha.style.display = 'block';
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+}
+
 function entrar() {
 
     var emailVar = input_email_login.value;
@@ -205,6 +307,7 @@ function entrar() {
                     sessionStorage.APELIDO_USUARIO = json.apelido;
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.PONTO_USUARIO = json.qtdPontos;
+                    sessionStorage.SENHA_USUARIO = json.senha;
 
                     setTimeout(function () {
                         carregando.style.display = 'block';

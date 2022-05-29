@@ -11,7 +11,7 @@
     <title>Resident Evil 2 - Quiz</title>
 </head>
 
-<body onload="validarSessao()" style="background-image: url(Imagens/bk1.webp); background-size: cover;">
+<body style="background-image: url(Imagens/bk1.webp); background-size: cover;">
 
     <div class="header">
         <div class="container">
@@ -35,297 +35,323 @@
 
     <div id="perfil_menu" class="perfil-menu">
         <h4 id="perfil_usuario">Olá, Usuário</h4>
-        <h4>Alterar Senha</h4>
+        <h4 onclick="open_alterar_senha()">Alterar Senha</h4>
         <h4 onclick="limparSessao()">Sair</h4>
     </div>
 
-    <div class="container-quiz">
-        <h2>QUIZ</h2>
-        <div id="barra_pergunta" class="barra">
-            <h4>INTRODUÇÃO</h4>
+    <div id="div_alterar_senha" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1>Alterar Senha</h1>
+                <b onclick="close_alterar_senha()">x</b>
+            </div>
+            <form class="form-login">
+                <label class="label-cadastro-login">Senha Atual</label>
+                <input id="input_senha_atual" class="input-login" type="password">
+                <div id="erro_senha_atual"></div>
+                <label class="label-cadastro-login">Nova Senha</label>
+                <input id="input_nova_senha" class="input-login" type="password">
+                <div id="erro_nova_senha"></div>
+                <label class="label-cadastro-login">Confirmar Senha</label>
+                <input id="input_confirmar_nova_senha" class="input-login" type="password">
+                <div id="erro_confirmar_senha_atual"></div>
+            </form>
+            <div id="erro_todos_alterar_senha" class="erro_cadastro"></div>
+            <button onclick="entrar()" class="btn-card">Alterar</button>
+            <div id="alterar_load" class="carregando" style="color: red">Alterando...</div>
         </div>
+    </div>
 
-        <div id="intro" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Bem vindos ao quiz sobre o game da franquia
-                    mais amada de zumbis que é Resident Evil 2 REMAKE,
-                    nesse quiz terão 10 perguntas sobre o que já rolou
-                    sobre o jogo e apenas os verdadeiros fãs de verdade
-                    são capazes de acertar todas!</h4>
+    <div class="banner-quiz">
+        <div class="container-quiz">
+            <h2>QUIZ</h2>
+            <div id="barra_pergunta" class="barra">
+                <h4>INTRODUÇÃO</h4>
             </div>
-        </div>
 
-        <div id="intro_button" class="quiz-buttons">
-            <button onclick="proxima_pergunta()" class="btn-card">COMEÇAR QUIZ</button>
-        </div>
+            <div id="intro" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Bem vindos ao quiz sobre o game da franquia
+                        mais amada de zumbis que é Resident Evil 2 REMAKE,
+                        nesse quiz terão 10 perguntas sobre o que já rolou
+                        sobre o jogo e apenas os verdadeiros fãs de verdade
+                        são capazes de acertar todas!</h4>
+                </div>
+            </div>
 
-        <div id="pergunta1" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Qual a data de lançamento do Resident Evil 2 Remake?</h4>
+            <div id="intro_button" class="quiz-buttons">
+                <button onclick="proxima_pergunta()" class="btn-card">COMEÇAR QUIZ</button>
             </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta1W1" class="radio-button" name="pergunta1" type="radio">
-                    <label>24 de Janeiro de 2019</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta1" class="radio-button" name="pergunta1" type="radio">
-                    <label>25 de Janeiro de 2019</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta1W2" class="radio-button" name="pergunta1" type="radio">
-                    <label>20 de Fevereiro de 2019</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta1W3" class="radio-button" name="pergunta1" type="radio">
-                    <label>15 de Outubro de 2019</label>
-                </div>
-            </div>
-        </div>
 
-        <div id="pergunta2" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Qual arma biológica tem a trilha sonora chamada Black Impact?</h4>
+            <div id="pergunta1" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Qual a data de lançamento do Resident Evil 2 Remake?</h4>
+                </div>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta1W1" class="radio-button" name="pergunta1" type="radio">
+                        <label>24 de Janeiro de 2019</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta1" class="radio-button" name="pergunta1" type="radio">
+                        <label>25 de Janeiro de 2019</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta1W2" class="radio-button" name="pergunta1" type="radio">
+                        <label>20 de Fevereiro de 2019</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta1W3" class="radio-button" name="pergunta1" type="radio">
+                        <label>15 de Outubro de 2019</label>
+                    </div>
+                </div>
             </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta2W1" class="radio-button" name="pergunta2" type="radio">
-                    <label>William Birkin</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta2W2" class="radio-button" name="pergunta2" type="radio">
-                    <label>Crocodilo Gigante</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta2" class="radio-button" name="pergunta2" type="radio">
-                    <label>Mr X</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta2W3" class="radio-button" name="pergunta2" type="radio">
-                    <label>Carníficie</label>
-                </div>
-            </div>
-        </div>
 
-        <div id="pergunta3" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Com qual item é possível fechar as janelas do RPD evitando a entrada dos zumbis?</h4>
+            <div id="pergunta2" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Qual arma biológica tem a trilha sonora chamada Black Impact?</h4>
+                </div>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta2W1" class="radio-button" name="pergunta2" type="radio">
+                        <label>William Birkin</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta2W2" class="radio-button" name="pergunta2" type="radio">
+                        <label>Crocodilo Gigante</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta2" class="radio-button" name="pergunta2" type="radio">
+                        <label>Mr X</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta2W3" class="radio-button" name="pergunta2" type="radio">
+                        <label>Carníficie</label>
+                    </div>
+                </div>
             </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta3" class="radio-button" name="pergunta3" type="radio">
-                    <label>Tábuas</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta3W1" class="radio-button" name="pergunta3" type="radio">
-                    <label>Fitas</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta3W2" class="radio-button" name="pergunta3" type="radio">
-                    <label>Pregos</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta3W3" class="radio-button" name="pergunta3" type="radio">
-                    <label>Grades</label>
-                </div>
-            </div>
-        </div>
 
-        <div id="pergunta4" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Qual o nome da pistola de Leon S. Kennedy?</h4>
+            <div id="pergunta3" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Com qual item é possível fechar as janelas do RPD evitando a entrada dos zumbis?</h4>
+                </div>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta3" class="radio-button" name="pergunta3" type="radio">
+                        <label>Tábuas</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta3W1" class="radio-button" name="pergunta3" type="radio">
+                        <label>Fitas</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta3W2" class="radio-button" name="pergunta3" type="radio">
+                        <label>Pregos</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta3W3" class="radio-button" name="pergunta3" type="radio">
+                        <label>Grades</label>
+                    </div>
+                </div>
             </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta4W1" class="radio-button" name="pergunta4" type="radio">
-                    <label>Handgun</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta4" class="radio-button" name="pergunta4" type="radio">
-                    <label>Matilda</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta4W2" class="radio-button" name="pergunta4" type="radio">
-                    <label>Blacktail</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta4W3" class="radio-button" name="pergunta4" type="radio">
-                    <label>Punisher</label>
-                </div>
-            </div>
-        </div>
 
-        <div id="pergunta5" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Qual arma é desbloqueada se conseguir um rank S+ na campanha como Leon?</h4>
+            <div id="pergunta4" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Qual o nome da pistola de Leon S. Kennedy?</h4>
+                </div>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta4W1" class="radio-button" name="pergunta4" type="radio">
+                        <label>Handgun</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta4" class="radio-button" name="pergunta4" type="radio">
+                        <label>Matilda</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta4W2" class="radio-button" name="pergunta4" type="radio">
+                        <label>Blacktail</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta4W3" class="radio-button" name="pergunta4" type="radio">
+                        <label>Punisher</label>
+                    </div>
+                </div>
             </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta5W1" class="radio-button" name="pergunta5" type="radio">
-                    <label>Machine Gun</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta5W2" class="radio-button" name="pergunta5" type="radio">
-                    <label>Samurai Edge</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta5" class="radio-button" name="pergunta5" type="radio">
-                    <label>Rocket Launcher</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta5W3" class="radio-button" name="pergunta5" type="radio">
-                    <label>Striker</label>
-                </div>
-            </div>
-        </div>
 
-        <div id="pergunta6" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Para qual mapa Claire Redfield vai após sair do RPD?</h4>
+            <div id="pergunta5" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Qual arma é desbloqueada se conseguir um rank S+ na campanha como Leon?</h4>
+                </div>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta5W1" class="radio-button" name="pergunta5" type="radio">
+                        <label>Machine Gun</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta5W2" class="radio-button" name="pergunta5" type="radio">
+                        <label>Samurai Edge</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta5" class="radio-button" name="pergunta5" type="radio">
+                        <label>Rocket Launcher</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta5W3" class="radio-button" name="pergunta5" type="radio">
+                        <label>Striker</label>
+                    </div>
+                </div>
             </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta6" class="radio-button" name="pergunta6" type="radio">
-                    <label>Orfanato</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta6W1" class="radio-button" name="pergunta6" type="radio">
-                    <label>Esgoto</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta6W2" class="radio-button" name="pergunta6" type="radio">
-                    <label>Laboratório</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta6W3" class="radio-button" name="pergunta6" type="radio">
-                    <label>Metrô</label>
-                </div>
-            </div>
-        </div>
 
-        <div id="pergunta7" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Quantas transformações possui o chefe William G. Birkin?</h4>
+            <div id="pergunta6" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Para qual mapa Claire Redfield vai após sair do RPD?</h4>
+                </div>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta6" class="radio-button" name="pergunta6" type="radio">
+                        <label>Orfanato</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta6W1" class="radio-button" name="pergunta6" type="radio">
+                        <label>Esgoto</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta6W2" class="radio-button" name="pergunta6" type="radio">
+                        <label>Laboratório</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta6W3" class="radio-button" name="pergunta6" type="radio">
+                        <label>Metrô</label>
+                    </div>
+                </div>
             </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta7W1" class="radio-button" name="pergunta7" type="radio">
-                    <label>2 transformações</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta7W2" class="radio-button" name="pergunta7" type="radio">
-                    <label>3 transformações</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta7W3" class="radio-button" name="pergunta7" type="radio">
-                    <label>4 transformações</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta7" class="radio-button" name="pergunta7" type="radio">
-                    <label>5 transformações</label>
-                </div>
-            </div>
-        </div>
 
-        <div id="pergunta8" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Quantos bonecos do Mr.Raccoon existem no jogo?</h4>
+            <div id="pergunta7" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Quantas transformações possui o chefe William G. Birkin?</h4>
+                </div>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta7W1" class="radio-button" name="pergunta7" type="radio">
+                        <label>2 transformações</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta7W2" class="radio-button" name="pergunta7" type="radio">
+                        <label>3 transformações</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta7W3" class="radio-button" name="pergunta7" type="radio">
+                        <label>4 transformações</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta7" class="radio-button" name="pergunta7" type="radio">
+                        <label>5 transformações</label>
+                    </div>
+                </div>
             </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta8" class="radio-button" name="pergunta8" type="radio">
-                    <label>15 Bonecos</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta8W1" class="radio-button" name="pergunta8" type="radio">
-                    <label>20 Bonecos</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta8W2" class="radio-button" name="pergunta8" type="radio">
-                    <label>25 Bonecos</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta8W3" class="radio-button" name="pergunta8" type="radio">
-                    <label>7 Bonecos</label>
-                </div>
-            </div>
-        </div>
 
-        <div id="pergunta9" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Por qual personagem Leon S. Kennedy se apaixona durante o jogo?</h4>
-            </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta9W1" class="radio-button" name="pergunta9" type="radio">
-                    <label>Ashley Graham</label>
+            <div id="pergunta8" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Quantos bonecos do Mr.Raccoon existem no jogo?</h4>
                 </div>
-                <div class="radios">
-                    <input id="resposta9W2" class="radio-button" name="pergunta9" type="radio">
-                    <label>Jill Valentine</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta9W3" class="radio-button" name="pergunta9" type="radio">
-                    <label>Claire Redfield</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta9" class="radio-button" name="pergunta9" type="radio">
-                    <label>Ada Wong</label>
-                </div>
-            </div>
-        </div>
-
-        <div id="pergunta10" class="container-card-quiz">
-            <div class="card-quiz">
-                <h4>Claire tem um irmão chamado Chris Redfield, ele faz parte de um grupo de forças especiais chamado:
-                </h4>
-            </div>
-            <div class="card-quiz">
-                <div class="radios">
-                    <input id="resposta10W1" class="radio-button" name="pergunta10" type="radio">
-                    <label>R.P.D</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta10" class="radio-button" name="pergunta10" type="radio">
-                    <label>S.T.A.R.S</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta10W2" class="radio-button" name="pergunta10" type="radio">
-                    <label>NEMESIS</label>
-                </div>
-                <div class="radios">
-                    <input id="resposta10W3" class="radio-button" name="pergunta10" type="radio">
-                    <label>UMBRELLA</label>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta8" class="radio-button" name="pergunta8" type="radio">
+                        <label>15 Bonecos</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta8W1" class="radio-button" name="pergunta8" type="radio">
+                        <label>20 Bonecos</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta8W2" class="radio-button" name="pergunta8" type="radio">
+                        <label>25 Bonecos</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta8W3" class="radio-button" name="pergunta8" type="radio">
+                        <label>7 Bonecos</label>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="resultado_quiz" class="container-card-resultado">
-            <div id="card_quiz_resultado" class="card-quiz">
-                <h3>Respostas corretas</h3>
-                <h4 id="resposta_correta">1/10</h4>
-                <h3>Respostas incorretas</h3>
-                <h4 id="resposta_errada">9/10</h4>
-                <h3>Pontuação total</h3>
-                <h4 id="pontuacao_total">40</h4>
+            <div id="pergunta9" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Por qual personagem Leon S. Kennedy se apaixona durante o jogo?</h4>
+                </div>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta9W1" class="radio-button" name="pergunta9" type="radio">
+                        <label>Ashley Graham</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta9W2" class="radio-button" name="pergunta9" type="radio">
+                        <label>Jill Valentine</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta9W3" class="radio-button" name="pergunta9" type="radio">
+                        <label>Claire Redfield</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta9" class="radio-button" name="pergunta9" type="radio">
+                        <label>Ada Wong</label>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div id="resultado_button" class="quiz-buttons">
-            <button onclick="go_ranking()" class="btn-card">RANKING</button>
-            <button onclick="go_quiz_again()" class="btn-card">REINICIAR</button>
-        </div>
+            <div id="pergunta10" class="container-card-quiz">
+                <div class="card-quiz">
+                    <h4>Claire tem um irmão chamado Chris Redfield, ele faz parte de um grupo de forças especiais
+                        chamado:
+                    </h4>
+                </div>
+                <div class="card-quiz">
+                    <div class="radios">
+                        <input id="resposta10W1" class="radio-button" name="pergunta10" type="radio">
+                        <label>R.P.D</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta10" class="radio-button" name="pergunta10" type="radio">
+                        <label>S.T.A.R.S</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta10W2" class="radio-button" name="pergunta10" type="radio">
+                        <label>NEMESIS</label>
+                    </div>
+                    <div class="radios">
+                        <input id="resposta10W3" class="radio-button" name="pergunta10" type="radio">
+                        <label>UMBRELLA</label>
+                    </div>
+                </div>
+            </div>
 
-        <div id="quiz_button" class="quiz-buttons">
-            <button id="button_proxima" onclick="proxima_pergunta()" class="btn-card">PRÓXIMA</button>
-            <h4 id="selecione">Por favor selecione uma alternativa!</h4>
-        </div>
+            <div id="resultado_quiz" class="container-card-resultado">
+                <div id="card_quiz_resultado" class="card-quiz">
+                    <h3>Respostas corretas</h3>
+                    <h4 id="resposta_correta">1/10</h4>
+                    <h3>Respostas incorretas</h3>
+                    <h4 id="resposta_errada">9/10</h4>
+                    <h3>Pontuação total</h3>
+                    <h4 id="pontuacao_total">40</h4>
+                </div>
+            </div>
 
-        <div id="certo_quiz" class="icone-quiz">
-            <img src="Imagens/acerto.png">
-        </div>
-        <div id="errado_quiz" class="icone-quiz">
-            <img src="Imagens/Erro.png">
+            <div id="resultado_button" class="quiz-buttons">
+                <button onclick="go_ranking()" class="btn-card">RANKING</button>
+                <button onclick="go_quiz_again()" class="btn-card">REINICIAR</button>
+            </div>
+
+            <div id="quiz_button" class="quiz-buttons">
+                <button id="button_proxima" onclick="proxima_pergunta()" class="btn-card">PRÓXIMA</button>
+                <h4 id="selecione">Por favor selecione uma alternativa!</h4>
+            </div>
+
+            <div id="certo_quiz" class="icone-quiz">
+                <img src="Imagens/acerto.png">
+            </div>
+            <div id="errado_quiz" class="icone-quiz">
+                <img src="Imagens/Erro.png">
+            </div>
         </div>
     </div>
 

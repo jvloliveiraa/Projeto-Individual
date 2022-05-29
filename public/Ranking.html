@@ -12,7 +12,7 @@
     <title>Resident Evil 2 - Ranking</title>
 </head>
 
-<body onload="validarSessao(), recuperarID(()=> exibirRanking()), obterAmador(()=>obterMediano(()=>obterVeterano(()=>inserirGrafico()))),
+<body onload=" recuperarID(()=> exibirRanking()), obterAmador(()=>obterMediano(()=>obterVeterano(()=>inserirGrafico()))),
     setTimeout(atualizarGrafico, 600)"
     style="background-image: url(Imagens/bk4.jpeg); background-size: cover;">
     <div class="header">
@@ -37,8 +37,31 @@
 
     <div id="perfil_menu" class="perfil-menu">
         <h4 id="perfil_usuario">Olá, Usuário</h4>
-        <h4>Alterar Senha</h4>
+        <h4 onclick="open_alterar_senha()">Alterar Senha</h4>
         <h4 onclick="limparSessao()">Sair</h4>
+    </div>
+
+    <div id="div_alterar_senha" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1>Alterar Senha</h1>
+                <b onclick="close_alterar_senha()">x</b>
+            </div>
+            <form class="form-login">
+                <label class="label-cadastro-login">Senha Atual</label>
+                <input id="input_senha_atual" class="input-login" type="password">
+                <div id="erro_senha_atual"></div>
+                <label class="label-cadastro-login">Nova Senha</label>
+                <input id="input_nova_senha" class="input-login" type="password">
+                <div id="erro_nova_senha"></div>
+                <label class="label-cadastro-login">Confirmar Senha</label>
+                <input id="input_confirmar_nova_senha" class="input-login" type="password">
+                <div id="erro_confirmar_senha_atual"></div>
+            </form>
+            <div id="erro_todos_alterar_senha" class="erro_cadastro"></div>
+            <button onclick="entrar()" class="btn-card">Alterar</button>
+            <div id="alterar_load" class="carregando" style="color: red">Alterando...</div>
+        </div>
     </div>
 
     <div class="container-ranking">

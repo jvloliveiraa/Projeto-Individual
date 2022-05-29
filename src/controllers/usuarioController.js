@@ -140,6 +140,10 @@ function cadastrarPontos(req, res) {
     }
 }
 
+function alterar_senha(){
+    
+}
+
 function atualizarTudo(req, res) {
     var idUsuario = req.params.idUsuario;
 
