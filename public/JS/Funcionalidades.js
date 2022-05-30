@@ -161,9 +161,15 @@ function cadastrar() {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                div_cadastro.style.display = 'none';
-                div_login.style.display = 'block';
-                limpar_cadastro();
+                cadastrar_load.style.display = 'block';
+                setTimeout(function () {
+                    cadastrar_load.innerHTML = 'Redirecionando para login';
+                }, 2000); // apenas para exibir o loading
+                setTimeout(function () {
+                    div_cadastro.style.display = 'none';
+                    div_login.style.display = 'block';
+                    limpar_cadastro();                  
+                }, 4000); // apenas para exibir o loading
             } else {
                 input_email.style.border = '2px solid red';
                 throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -178,90 +184,6 @@ function cadastrar() {
 function go_indexByLogin() {
     div_login.style.display = 'none';
     limpar_login();
-}
-
-function alterar_senha(){
-    
-    var senha_atual = input_senha_atual.value;
-    var nova_senha = input_nova_senha.value;
-    var confirmar_senha = input_confirmar_nova_senha.value;
-
-    if (senha_atual != sessionStorage.SENHA_USUARIO) {
-        input_senha_atual.style.border = '2px solid red';
-        erro_senha_atual.style.display = 'block'
-    }
-    else{
-        input_senha_atual.style.border = '2px solid green';
-        erro_senha_atual.style.display = 'none'
-    }
-
-    if(nova_senha == "" || nova_senha.length < 5){
-        input_nova_senha.style.border = '2px solid red';
-        erro_nova_senha.style.display = 'block';
-        erro_todos_alterar_senha.style.display = 'block'
-    }
-    else{
-        input_nova_senha.style.border = '2px solid green';
-        erro_nova_senha.style.display = 'none';
-    }
-
-    if(confirmar_senha != nova_senha){
-        input_confirmar_nova_senha.style.border = '2px solid red';
-        erro_confirmar_senha_atual.style.display = 'block';
-    }
-    else{
-        input_confirmar_nova_senha.style.border = '2px solid green';
-        erro_confirmar_senha_atual.style.display = 'none';
-    }
-
-    if(input_senha_atual.style.border == '2px solid red' || input_nova_senha.style.border == '2px solid red'
-        || input_confirmar_nova_senha.style.border == '2px solid red'){
-            erro_todos_alterar_senha.style.display = 'block';
-    }
-     else {
-        erro_todos_alterar_senha.style.display = 'none';
-
-        fetch("/usuarios/alterar_senha", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                senha_atualServer: senha_atual,
-                nova_senhaServer: nova_senha
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    setTimeout(function () {
-                        alterar_load.style.display = 'block';
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-                erro_todos_alterar_senha.style.display = 'block';
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    // finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
-    }
 }
 
 function entrar() {
@@ -309,10 +231,11 @@ function entrar() {
                     sessionStorage.PONTO_USUARIO = json.qtdPontos;
                     sessionStorage.SENHA_USUARIO = json.senha;
 
+                    carregando.style.display = 'block';
+
                     setTimeout(function () {
-                        carregando.style.display = 'block';
                         window.location = "Principal.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 2000); // apenas para exibir o loading
 
                 });
 
@@ -331,6 +254,82 @@ function entrar() {
             console.log(erro);
         })
 
+        return false;
+    }
+}
+
+function alterarSenha() {
+
+    var senha_atual = input_senha_atual.value;
+    var nova_senha = input_nova_senha.value;
+    var confirmar_senha = input_confirmar_nova_senha.value;
+    var idUsuarioAlterar = sessionStorage.ID_USUARIO;
+
+    if (senha_atual != sessionStorage.SENHA_USUARIO) {
+        input_senha_atual.style.border = '2px solid red';
+        erro_senha_atual.style.display = 'block'
+    }
+    else{
+        input_senha_atual.style.border = '2px solid green';
+        erro_senha_atual.style.display = 'none'
+    }
+
+    if(nova_senha == "" || nova_senha.length < 5){
+        input_nova_senha.style.border = '2px solid red';
+        erro_nova_senha.style.display = 'block';
+        erro_todos_alterar_senha.style.display = 'block'
+    }
+    else{
+        input_nova_senha.style.border = '2px solid green';
+        erro_nova_senha.style.display = 'none';
+    }
+
+    if(confirmar_senha != nova_senha){
+        input_confirmar_nova_senha.style.border = '2px solid red';
+        erro_confirmar_senha_atual.style.display = 'block';
+    }
+    else{
+        input_confirmar_nova_senha.style.border = '2px solid green';
+        erro_confirmar_senha_atual.style.display = 'none';
+    }
+
+    if(input_senha_atual.style.border == '2px solid red' || input_nova_senha.style.border == '2px solid red'
+        || input_confirmar_nova_senha.style.border == '2px solid red'){
+            erro_todos_alterar_senha.style.display = 'block';
+    }
+     else {
+
+        fetch("/usuarios/alterarSenha", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuarioAlterarServer: idUsuarioAlterar,
+                novaSenhaServer: nova_senha
+            })
+        }).then(function (resposta) {
+    
+            console.log("resposta: ", resposta);
+    
+            if (resposta.ok) {
+                alterar_load.style.display = 'block';
+
+                setTimeout(function () {
+                    alterar_load.innerHTML = 'Senha alterada com sucesso! Por favor refaça seu login';
+                }, 2000); // apenas para exibir o loading
+                setTimeout(function () {
+                    window.location.href = 'Index.html';
+                }, 5000); // apenas para exibir o loading
+                sessionStorage.clear();
+                
+            } else {
+                throw ("Houve um erro ao alterar senha");
+            }
+        }).catch(function (resposta) {
+            console.log(`Erro do catch: ${resposta}`);
+        });
+    
         return false;
     }
 }

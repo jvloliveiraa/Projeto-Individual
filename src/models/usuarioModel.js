@@ -19,6 +19,15 @@ function entrar(email, senha) {
     return database.executar(instrucao);
 }
 
+function alterarSenha(idUsuarioAlterar, novaSenha) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+        UPDATE usuario SET senha = '${novaSenha}' WHERE idUsuario = ${idUsuarioAlterar};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 function cadastrar(nome, apelido, nascimento, email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
     
@@ -105,5 +114,6 @@ module.exports = {
     obterAmador,
     obterMediano,
     obterVeterano,
-    atualizarTudo
+    atualizarTudo,
+    alterarSenha
 };

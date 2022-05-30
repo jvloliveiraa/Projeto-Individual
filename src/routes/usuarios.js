@@ -24,8 +24,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
-router.post("/alterar_senha", function (req, res) {
-    usuarioController.alterar_senha(req, res);
+router.post("/alterarSenha", function (req, res) {
+    usuarioController.alterarSenha(req, res);
 });
 
 router.get("/atualizarTudo/:idUsuario", function (req, res) {

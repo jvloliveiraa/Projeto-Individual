@@ -60,6 +60,27 @@ function entrar(req, res) {
 
 }
 
+function alterarSenha(req, res) {
+    var novaSenha = req.body.novaSenhaServer;
+    var idUsuarioAlterar = req.body.idUsuarioAlterarServer;
+
+    usuarioModel.alterarSenha(idUsuarioAlterar, novaSenha)
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nErro ao alterar senha 2 ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
@@ -138,10 +159,6 @@ function cadastrarPontos(req, res) {
                 }
             );
     }
-}
-
-function alterar_senha(){
-    
 }
 
 function atualizarTudo(req, res) {
@@ -249,5 +266,6 @@ module.exports = {
     obterAmador,
     obterMediano,
     obterVeterano,
-    atualizarTudo
+    atualizarTudo,
+    alterarSenha
 }

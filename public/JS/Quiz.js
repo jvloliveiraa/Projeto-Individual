@@ -15,20 +15,24 @@ function proxima_pergunta() {
             pontos++;
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pergunta1.style.display = 'none';
-            pergunta2.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 2/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {
+                pergunta1.style.display = 'none';
+                pergunta2.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 2/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;              
+            }, 2000);
         }
         else if (resposta1W1.checked || resposta1W2.checked || resposta1W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            pergunta1.style.display = 'none';
-            pergunta2.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 2/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {
+                pergunta1.style.display = 'none';
+                pergunta2.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 2/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;             
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'
@@ -38,21 +42,25 @@ function proxima_pergunta() {
         if (resposta2.checked) {
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pontos++;
-            pergunta2.style.display = 'none';
-            pergunta3.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 3/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pontos++;
+                pergunta2.style.display = 'none';
+                pergunta3.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 3/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else if (resposta2W1.checked || resposta2W2.checked || resposta2W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            pergunta2.style.display = 'none';
-            pergunta3.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 3/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pergunta2.style.display = 'none';
+                pergunta3.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 3/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'
@@ -62,21 +70,25 @@ function proxima_pergunta() {
         if (resposta3.checked) {
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pontos++;
-            pergunta3.style.display = 'none';
-            pergunta4.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 4/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pontos++;
+                pergunta3.style.display = 'none';
+                pergunta4.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 4/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else if (resposta3W1.checked || resposta3W2.checked || resposta3W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            pergunta3.style.display = 'none';
-            pergunta4.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 4/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pergunta3.style.display = 'none';
+                pergunta4.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 4/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'
@@ -86,21 +98,25 @@ function proxima_pergunta() {
         if (resposta4.checked) {
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pontos++;
-            pergunta4.style.display = 'none';
-            pergunta5.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 5/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pontos++;
+                pergunta4.style.display = 'none';
+                pergunta5.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 5/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else if (resposta4W1.checked || resposta4W2.checked || resposta4W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            pergunta4.style.display = 'none';
-            pergunta5.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 5/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pergunta4.style.display = 'none';
+                pergunta5.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 5/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'
@@ -110,21 +126,25 @@ function proxima_pergunta() {
         if (resposta5.checked) {
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pontos++;
-            pergunta5.style.display = 'none';
-            pergunta6.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 6/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pontos++;
+                pergunta5.style.display = 'none';
+                pergunta6.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 6/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else if (resposta5W1.checked || resposta5W2.checked || resposta5W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            pergunta5.style.display = 'none';
-            pergunta6.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 6/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pergunta5.style.display = 'none';
+                pergunta6.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 6/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'
@@ -134,21 +154,25 @@ function proxima_pergunta() {
         if (resposta6.checked) {
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pontos++;
-            pergunta6.style.display = 'none';
-            pergunta7.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 7/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pontos++;
+                pergunta6.style.display = 'none';
+                pergunta7.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 7/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else if (resposta6W1.checked || resposta6W2.checked || resposta6W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            pergunta6.style.display = 'none';
-            pergunta7.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 7/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pergunta6.style.display = 'none';
+                pergunta7.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 7/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'
@@ -158,21 +182,25 @@ function proxima_pergunta() {
         if (resposta7.checked) {
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pontos++;
-            pergunta7.style.display = 'none';
-            pergunta8.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 8/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pontos++;
+                pergunta7.style.display = 'none';
+                pergunta8.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 8/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else if (resposta7W1.checked || resposta7W2.checked || resposta7W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            pergunta7.style.display = 'none';
-            pergunta8.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 8/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pergunta7.style.display = 'none';
+                pergunta8.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 8/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'
@@ -182,21 +210,25 @@ function proxima_pergunta() {
         if (resposta8.checked) {
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pontos++;
-            pergunta8.style.display = 'none';
-            pergunta9.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 9/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pontos++;
+                pergunta8.style.display = 'none';
+                pergunta9.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 9/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else if (resposta8W1.checked || resposta8W2.checked || resposta8W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            pergunta8.style.display = 'none';
-            pergunta9.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 9/10 </h4>`;
-            selecione.style.display = 'none'
-            contador++;
+            setTimeout(function () {       
+                pergunta8.style.display = 'none';
+                pergunta9.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 9/10 </h4>`;
+                selecione.style.display = 'none'
+                contador++;
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'
@@ -206,23 +238,27 @@ function proxima_pergunta() {
         if (resposta9.checked) {
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pontos++;
-            pergunta9.style.display = 'none';
-            pergunta10.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 10/10 </h4>`;
-            selecione.style.display = 'none'
-            button_proxima.innerHTML = 'Finalizar'
-            contador++;
+            setTimeout(function () {       
+                pontos++;
+                pergunta9.style.display = 'none';
+                pergunta10.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 10/10 </h4>`;
+                selecione.style.display = 'none'
+                button_proxima.innerHTML = 'Finalizar'
+                contador++;
+            }, 2000);
         }
         else if (resposta9W1.checked || resposta9W2.checked || resposta9W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            pergunta9.style.display = 'none';
-            pergunta10.style.display = 'flex';
-            barra_pergunta.innerHTML = `<h4> 10/10 </h4>`;
-            selecione.style.display = 'none'
-            button_proxima.innerHTML = 'Finalizar'
-            contador++;
+            setTimeout(function () {       
+                pergunta9.style.display = 'none';
+                pergunta10.style.display = 'flex';
+                barra_pergunta.innerHTML = `<h4> 10/10 </h4>`;
+                selecione.style.display = 'none'
+                button_proxima.innerHTML = 'Finalizar'
+                contador++;
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'
@@ -232,21 +268,25 @@ function proxima_pergunta() {
         if (resposta10.checked) {
             mostrar_certo();
             setTimeout(fechar_certo, 600);
-            pontos++;
-            cadastrarPontos(()=>{
-                atualizarTudo(()=>{
-                    mostrar_na_tela()
-                });
-            })
+            setTimeout(function () {       
+                pontos++;
+                cadastrarPontos(()=>{
+                    atualizarTudo(()=>{
+                        mostrar_na_tela()
+                    });
+                })
+            }, 2000);
         }
         else if (resposta10W1.checked || resposta10W2.checked || resposta10W3.checked) {
             mostrar_errado();
             setTimeout(fechar_errado, 600);
-            cadastrarPontos(()=>{
-                atualizarTudo(()=>{
-                    mostrar_na_tela()
-                });
-            })
+            setTimeout(function () {       
+                cadastrarPontos(()=>{
+                    atualizarTudo(()=>{
+                        mostrar_na_tela()
+                    });
+                })
+            }, 2000);
         }
         else {
             selecione.style.display = 'block'

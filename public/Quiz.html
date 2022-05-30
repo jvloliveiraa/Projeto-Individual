@@ -48,16 +48,16 @@
             <form class="form-login">
                 <label class="label-cadastro-login">Senha Atual</label>
                 <input id="input_senha_atual" class="input-login" type="password">
-                <div id="erro_senha_atual"></div>
+                <div id="erro_senha_atual" class="erro_cadastro">Senha atual incorreta</div>
                 <label class="label-cadastro-login">Nova Senha</label>
                 <input id="input_nova_senha" class="input-login" type="password">
-                <div id="erro_nova_senha"></div>
+                <div id="erro_nova_senha" class="erro_cadastro">A senha deve conter no mínimo 5 caracteres</div>
                 <label class="label-cadastro-login">Confirmar Senha</label>
                 <input id="input_confirmar_nova_senha" class="input-login" type="password">
-                <div id="erro_confirmar_senha_atual"></div>
+                <div id="erro_confirmar_senha_atual" class="erro_cadastro">As senhas devem ser iguais e conter no mínimo 5 caracteres</div>
             </form>
-            <div id="erro_todos_alterar_senha" class="erro_cadastro"></div>
-            <button onclick="entrar()" class="btn-card">Alterar</button>
+            <div id="erro_todos_alterar_senha" class="erro_cadastro">Não foi possível alterar senha!</div>
+            <button onclick="alterarSenha()" class="btn-card">Alterar</button>
             <div id="alterar_load" class="carregando" style="color: red">Alterando...</div>
         </div>
     </div>
