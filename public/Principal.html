@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Estilo.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="JS/Sons.js"></script>
     <script src="JS/Funcionalidades.js"></script>
     <title>Resident Evil 2 - Home</title>
 </head>
 
-<body style="background-image: url(Imagens/body2.jpg); overflow-x: hidden;">
+<body onload="validarSessao()" style="background-image: url(Imagens/body2.jpg); overflow-x: hidden;">
 
     <div class="header">
         <div class="container">
@@ -27,10 +26,8 @@
                 <li> <a href="Quiz.html">QUIZ</a> </li>
                 <li> <a href="Ranking.html">RANKING</a> </li>
             </ul>
-            <!-- <div class="logoff"> -->
             <div class="perfil">
                 <img onclick="open_perfil()" src="Imagens/perfil.png">
-                <!-- <button onclick="limparSessao()" class="btn-card">SAIR</button> -->
             </div>
         </div>
     </div>
@@ -56,11 +53,148 @@
                 <div id="erro_nova_senha" class="erro_cadastro">A senha deve conter no mínimo 5 caracteres</div>
                 <label class="label-cadastro-login">Confirmar Senha</label>
                 <input id="input_confirmar_nova_senha" class="input-login" type="password">
-                <div id="erro_confirmar_senha_atual" class="erro_cadastro">As senhas devem ser iguais e conter no mínimo 5 caracteres</div>
+                <div id="erro_confirmar_senha_atual" class="erro_cadastro">As senhas devem ser iguais e conter no mínimo
+                    5 caracteres</div>
             </form>
             <div id="erro_todos_alterar_senha" class="erro_cadastro">Não foi possível alterar senha!</div>
             <button onclick="alterarSenha()" class="btn-card">Alterar</button>
             <div id="alterar_load" class="carregando" style="color: red">Alterando...</div>
+        </div>
+    </div>
+
+    <div id="div_leon" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1 id="h1_leon">LEON SCOTT KENNEDY</h1>
+                <b onclick="closeLeon()">x</b>
+            </div>
+            <div class="container-paragrafo">
+                <p class="paragrafos_personagem">
+                    Leon Kennedy ficou interessado nos estranhos incidentes que ocorreram nas redondezas de Raccoon
+                    City, e por isso se candidatou a uma vaga no Departamento de Polícia da cidade, após ter concluído
+                    sua formação na academia de polícia. Leon ficou muito orgulhoso por se tornar um policial,
+                    principalmente por sua personalidade protetora e voltada para o senso de justiça.
+
+                    No dia 28 de setembro de 1998, Leon terminou o relacionamento com sua namorada. Para esquecer o fim
+                    do namoro, ele foi para uma festa e acabou bêbado no quarto de um motel na estrada. A agitada noite
+                    fez com que Leon acordasse muito tarde e se atrasasse para chegar a Raccoon City no seu primeiro dia
+                    de trabalho.
+
+                    Essa falha, que poderia condenar o emprego de Leon, acabou salvando sua vida. O policial deveria ter
+                    chegado à cidade no ápice da infecção viral que assolava Raccoon City. Devido às ações de Brian
+                    Irons, de trancar os policiais dentro da delegacia e inviabilizar o acesso à munição, Leon poderia
+                    ter sido mais um policial a se transformar um zumbi.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="div_claire" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1 id="h1_claire">CLAIRE REDFIELD</h1>
+                <b onclick="closeClaire()">x</b>
+            </div>
+            <div class="container-paragrafo">
+                <p class="paragrafos_personagem">
+                    Claire Redfield é a irmã mais nova de Chris Redfield e tem muito orgulho do trabalho do irmão, desde
+                    a época dos S.T.A.R.S. Ela tem personalidade forte e mesmo sendo somente uma civil, ela sabe manejar
+                    armas e lockpicks muito bem, graças às lições que aprendeu com o irmão mais velho.
+
+                    Claire levava uma vida perfeitamente normal, sendo uma estudante apaixonada por motocicletas, até o
+                    repentino desaparecimento de Chris. Ela decidiu ir até Raccoon City tentar descobrir o paradeiro de
+                    seu irmão e se envolveu na trágica história da cidade. A partir daí, Claire se viu comovida com as
+                    vítimas da pesquisa ilegal e do bioterrorismo e se tornou uma ativista para combater esse tipo de
+                    atividade.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="div_ada" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1 id="h1_ada">ADA WONG</h1>
+                <b onclick="closeAda()">x</b>
+            </div>
+            <div class="container-paragrafo">
+                <p class="paragrafos_personagem">
+                    Ada Wong é uma asiática que trabalhou como espiã para uma organização originalmente rival à
+                    Umbrella.
+                    Há poucas informações sobre o seu passado – sequer é possível dizer se seu nome é mesmo Ada.
+                    Com treinamento especial, Ada é definida como uma ótima profissional. Ela conduz seus planos até o
+                    final de forma fria e calculista até mesmo nas situações mais extremas. Os seus sentimentos são o
+                    único obstáculo que podem desviá-la de seus caminhos e objetivos.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="div_sherry" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1 id="h1_sherry">SHERRY BIRKIN</h1>
+                <b onclick="closeSherry()">x</b>
+            </div>
+            <div class="container-paragrafo">
+                <p class="paragrafos_personagem">
+                    Sherry Birkin é filha dos pesquisadores William Birkin e Annette Birkin, dois dos principais membros
+                    da equipe de pesquisas da Umbrella, sendo o primeiro o responsável pela descoberta do G-Vírus. O
+                    brilhantismo do casal, no entanto não era o mesmo quando o assunto era família.
+
+                    Por conta de suas pesquisas e do envolvimento com o trabalho, Sherry sempre foi relegada a um
+                    segundo plano em suas vidas, e na maioria dos momentos não podia contar com os seus pais. Isso
+                    acabou fazendo com que Sherry amadurecesse rapidamente, aprendendo a se virar sozinha na maioria das
+                    situações.
+
+                    Por outro lado ela era uma criança muito tímida, insegura e dificilmente confiava em alguma outra
+                    pessoa por conta das decepções que sofreu com seus pais.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="div_william" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1 id="h1_william">WILLIAM G. BIRKIN</h1>
+                <b onclick="closeWilliam()">x</b>
+            </div>
+            <div class="container-paragrafo">
+                <p class="paragrafos_personagem">
+                    William Birkin nasceu em 1962, quase que predestinado a se tornar um grande pesquisador e cientista.
+                    Desde cedo o jovem William demonstrou um intelecto muito acima do normal, um verdadeiro garoto
+                    prodígio; tanto que ainda na adolescência, ele ocupou posições de destaque na Umbrella.
+
+                    Logo após ser aceito na empresa, William e outro jovem promissor – Albert Wesker, entram para o
+                    Centro de Treinamento da empresa, já como potenciais chefes de pesquisa. O intuito da entrada dos
+                    jovens prodígios para o Centro de Treinamento era treiná-los e doutriná-los para que pudessem
+                    desenvolver suas capacidades ao máximo, podendo assim, contribuir para a Umbrella com pesquisas e
+                    experimentos de vanguarda.
+
+                    Durante essa formação, Birkin chamou a atenção do Dr. James Marcus, diretor do Centro de
+                    Treinamento, que passou a acompanhar muito de perto os passos do jovem promissor, assim como também
+                    passou a acompanhar os passos de Albert Wesker, que se tornara um amigo e ao mesmo tempo um rival de
+                    Birkin.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="div_annette" class="container-login">
+        <div class="card-login">
+            <div class="header-login">
+                <h1 id="h1_annette">ANNETTE BIRKIN</h1>
+                <b onclick="closeAnnette()">x</b>
+            </div>
+            <div class="container-paragrafo">
+                <p class="paragrafos_personagem">
+                    Annette Birkin era uma pesquisadora do laboratório das Montanhas Arklay, uma das instalações da
+                    Umbrella Corporation; durante os seus trabalhos ela iniciou um relacionamento com o seu chefe
+                    William Birkin; os dois se casaram e um tempo depois (dois anos antes da descoberta do G-Virus),
+                    Annette dá a luz à Sherry Birkin.
+                </p>
+            </div>
         </div>
     </div>
 
@@ -81,37 +215,37 @@
                 <div class="personagens">
                     <div class="perso">
                         <div class="nome_personagem">
-                            <img src="Imagens/Leon.jpg">
+                            <img onclick="openLeon()" src="Imagens/Leon.jpg">
                         </div>
                         <h2>LEON</h2>
                     </div>
                     <div class="perso">
                         <div class="nome_personagem">
-                            <img src="Imagens/Claire.jpg">
+                            <img onclick="openClaire()" src="Imagens/Claire.jpg">
                         </div>
                         <h2>CLAIRE</h2>
                     </div>
                     <div class="perso">
                         <div class="nome_personagem">
-                            <img src="Imagens/Ada.jpg">
+                            <img onclick="openAda()" src="Imagens/Ada.jpg">
                         </div>
                         <h2>ADA</h2>
                     </div>
                     <div class="perso">
                         <div class="nome_personagem">
-                            <img src="Imagens/Sherry.png">
+                            <img onclick="openSherry()" src="Imagens/Sherry.png">
                         </div>
                         <h2>SHERRY</h2>
                     </div>
                     <div class="perso">
                         <div class="nome_personagem">
-                            <img src="Imagens/William.png">
+                            <img onclick="openWilliam()" src="Imagens/William.png">
                         </div>
                         <h2>WILLIAM</h2>
                     </div>
                     <div class="perso">
                         <div class="nome_personagem">
-                            <img src="Imagens/Annette.jpeg">
+                            <img onclick="openAnnette()" src="Imagens/Annette.jpeg">
                         </div>
                         <h2>ANNETTE</h2>
                     </div>
@@ -216,31 +350,3 @@
 </body>
 
 </html>
-
-<script>
-    var $doc = $('html, body');
-    $('.AncSobre').click(function () {
-        $doc.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
-        return false;
-    });
-    $('.AncMidia').click(function () {
-        $doc.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
-        return false;
-    });
-    $('.AncPersonagem').click(function () {
-        $doc.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
-        return false;
-    });
-    $('.AncMusica').click(function () {
-        $doc.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
-        return false;
-    });
-</script>

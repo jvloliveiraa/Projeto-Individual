@@ -12,7 +12,7 @@
     <title>Resident Evil 2 - Ranking</title>
 </head>
 
-<body onload=" recuperarID(()=> exibirRanking()), obterAmador(()=>obterMediano(()=>obterVeterano(()=>inserirGrafico()))),
+<body onload="validarSessao(), recuperarID(()=> exibirRanking()), obterAmador(()=>obterMediano(()=>obterVeterano(()=>inserirGrafico()))),
     setTimeout(atualizarGrafico, 600)"
     style="background-image: url(Imagens/bk4.jpeg); background-size: cover;">
     <div class="header">
@@ -30,7 +30,6 @@
             </ul>
             <div class="perfil">
                 <img onclick="open_perfil()" src="Imagens/perfil.png">
-                <!-- <button onclick="limparSessao()" class="btn-card">SAIR</button> -->
             </div>
         </div>
     </div>

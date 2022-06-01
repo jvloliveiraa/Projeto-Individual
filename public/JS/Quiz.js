@@ -21,7 +21,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 2/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;              
-            }, 2000);
+            }, 1000);
         }
         else if (resposta1W1.checked || resposta1W2.checked || resposta1W3.checked) {
             mostrar_errado();
@@ -32,7 +32,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 2/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;             
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'
@@ -49,7 +49,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 3/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else if (resposta2W1.checked || resposta2W2.checked || resposta2W3.checked) {
             mostrar_errado();
@@ -60,7 +60,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 3/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'
@@ -77,7 +77,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 4/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else if (resposta3W1.checked || resposta3W2.checked || resposta3W3.checked) {
             mostrar_errado();
@@ -88,7 +88,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 4/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'
@@ -105,7 +105,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 5/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else if (resposta4W1.checked || resposta4W2.checked || resposta4W3.checked) {
             mostrar_errado();
@@ -116,7 +116,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 5/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'
@@ -133,7 +133,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 6/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else if (resposta5W1.checked || resposta5W2.checked || resposta5W3.checked) {
             mostrar_errado();
@@ -144,7 +144,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 6/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'
@@ -161,7 +161,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 7/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else if (resposta6W1.checked || resposta6W2.checked || resposta6W3.checked) {
             mostrar_errado();
@@ -172,7 +172,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 7/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'
@@ -189,7 +189,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 8/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else if (resposta7W1.checked || resposta7W2.checked || resposta7W3.checked) {
             mostrar_errado();
@@ -200,7 +200,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 8/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'
@@ -217,7 +217,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 9/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else if (resposta8W1.checked || resposta8W2.checked || resposta8W3.checked) {
             mostrar_errado();
@@ -228,7 +228,7 @@ function proxima_pergunta() {
                 barra_pergunta.innerHTML = `<h4> 9/10 </h4>`;
                 selecione.style.display = 'none'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'
@@ -246,7 +246,7 @@ function proxima_pergunta() {
                 selecione.style.display = 'none'
                 button_proxima.innerHTML = 'Finalizar'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else if (resposta9W1.checked || resposta9W2.checked || resposta9W3.checked) {
             mostrar_errado();
@@ -258,7 +258,7 @@ function proxima_pergunta() {
                 selecione.style.display = 'none'
                 button_proxima.innerHTML = 'Finalizar'
                 contador++;
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'
@@ -275,7 +275,7 @@ function proxima_pergunta() {
                         mostrar_na_tela()
                     });
                 })
-            }, 2000);
+            }, 1000);
         }
         else if (resposta10W1.checked || resposta10W2.checked || resposta10W3.checked) {
             mostrar_errado();
@@ -286,7 +286,7 @@ function proxima_pergunta() {
                         mostrar_na_tela()
                     });
                 })
-            }, 2000);
+            }, 1000);
         }
         else {
             selecione.style.display = 'block'

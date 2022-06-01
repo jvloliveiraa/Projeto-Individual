@@ -148,8 +148,6 @@ function cadastrar() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nome,
                 apelidoServer: apelido,
                 nascimentoServer: nascimento,
@@ -164,14 +162,15 @@ function cadastrar() {
                 cadastrar_load.style.display = 'block';
                 setTimeout(function () {
                     cadastrar_load.innerHTML = 'Redirecionando para login';
-                }, 2000); // apenas para exibir o loading
+                }, 2000);
                 setTimeout(function () {
                     div_cadastro.style.display = 'none';
                     div_login.style.display = 'block';
                     limpar_cadastro();                  
-                }, 4000); // apenas para exibir o loading
+                }, 4000);
             } else {
                 input_email.style.border = '2px solid red';
+                erro_todos.innerHTML = 'Email já cadastrado!'
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
@@ -298,7 +297,7 @@ function alterarSenha() {
             erro_todos_alterar_senha.style.display = 'block';
     }
      else {
-
+        erro_todos_alterar_senha.style.display = 'none';
         fetch("/usuarios/alterarSenha", {
             method: "POST",
             headers: {
@@ -364,4 +363,52 @@ function validarSessao() {
 function limparSessao() {
     sessionStorage.clear();
     window.location = "Index.html";
+}
+
+function openLeon(){
+    div_leon.style.display = 'block';
+}
+
+function closeLeon(){
+    div_leon.style.display = 'none';
+}
+
+function openClaire(){
+    div_claire.style.display = 'block';
+}
+
+function closeClaire(){
+    div_claire.style.display = 'none';
+}
+
+function openAda(){
+    div_ada.style.display = 'block';
+}
+
+function closeAda(){
+    div_ada.style.display = 'none';
+}
+
+function openSherry(){
+    div_sherry.style.display = 'block';
+}
+
+function closeSherry(){
+    div_sherry.style.display = 'none';
+}
+
+function openWilliam(){
+    div_william.style.display = 'block';
+}
+
+function closeWilliam(){
+    div_william.style.display = 'none';
+}
+
+function openAnnette(){
+    div_annette.style.display = 'block';
+}
+
+function closeAnnette(){
+    div_annette.style.display = 'none';
 }
