@@ -201,8 +201,6 @@ function entrar() {
     else {
         erro_todos_login.style.display = 'none';
         erro_todos_login.innerHTML = '';
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -231,6 +229,8 @@ function entrar() {
                     sessionStorage.SENHA_USUARIO = json.senha;
 
                     carregando.style.display = 'block';
+                    input_email_login.style.border = '2px solid green';
+                    input_senha_login.style.border = '2px solid green';
 
                     setTimeout(function () {
                         window.location = "Principal.html";
@@ -241,6 +241,8 @@ function entrar() {
             } else {
                 erro_todos_login.innerHTML = "Usuário ou senha incorretos";
                 erro_todos_login.style.display = 'block';
+                input_email_login.style.border = '2px solid red';
+                input_senha_login.style.border = '2px solid red';
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
